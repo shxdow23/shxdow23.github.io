@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUNGEONS BIBLE ULTIMATE - Complete Minecraft Dungeons Encyclopedia</title>
+    <title>DUNGEONS BIBLE ULTIMATE - Complete Shinn-Accurate Encyclopedia</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -13,48 +13,24 @@
             line-height: 1.6; 
         }
         
-        header {
+        .shin-header {
             background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
             padding: 3rem 0;
             text-align: center;
             border-bottom: 4px solid #ff6b35;
             position: relative;
-            overflow: hidden;
         }
         
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ff6b35" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffa500" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-            z-index: 0;
-        }
-        
-        h1 {
+        .shin-title {
             color: #ff6b35;
             font-size: 3.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
             margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
         }
         
-        .subtitle {
+        .shin-subtitle {
             color: #ffa500;
             font-size: 1.3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        nav {
-            background: rgba(42,42,42,0.95);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-            backdrop-filter: blur(10px);
         }
         
         .nav-container {
@@ -64,7 +40,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
-            padding: 0 1rem;
+            padding: 1rem;
         }
         
         .nav-item {
@@ -76,28 +52,12 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-item::before {
-            content: "";
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .nav-item:hover::before {
-            left: 100%;
         }
         
         .nav-item:hover {
             background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
             border-color: #ff6b35;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
         }
         
         .container {
@@ -113,7 +73,11 @@
             border-radius: 15px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.4);
             border: 1px solid rgba(255, 107, 53, 0.2);
-            backdrop-filter: blur(5px);
+        }
+        
+        .shin-section {
+            background: linear-gradient(135deg, rgba(58,58,58,0.9) 0%, rgba(42,42,42,0.9) 100%);
+            border-left: 5px solid #ff6b35;
         }
         
         h2 {
@@ -122,75 +86,6 @@
             margin-bottom: 1.8rem;
             border-bottom: 4px solid #8b4513;
             padding-bottom: 0.8rem;
-            position: relative;
-        }
-        
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -4px; left: 0;
-            width: 60px; height: 4px;
-            background: #ff6b35;
-            border-radius: 2px;
-        }
-        
-        h3 {
-            color: #ffa500;
-            font-size: 2rem;
-            margin: 2rem 0 1.2rem 0;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        h3::before {
-            content: "";
-            position: absolute;
-            left: 0; top: 50%;
-            transform: translateY(-50%);
-            width: 4px; height: 70%;
-            background: #ff6b35;
-            border-radius: 2px;
-        }
-        
-        h4 {
-            color: #ffb366;
-            font-size: 1.4rem;
-            margin: 1.2rem 0 0.8rem 0;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .card {
-            background: linear-gradient(135deg, rgba(58,58,58,0.9) 0%, rgba(42,42,42,0.9) 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 5px solid #ff6b35;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .card:hover::before {
-            opacity: 1;
-        }
-        
-        .card:hover {
-            transform: translateX(8px) translateY(-5px);
-            box-shadow: -8px 8px 25px rgba(255, 107, 53, 0.3);
         }
         
         .item-table {
@@ -234,131 +129,21 @@
         .tier-A { color: #ffa500; font-weight: bold; }
         .tier-B { color: #ffd700; font-weight: 600; }
         .tier-C { color: #90ee90; }
-        .tier-D { color: #87ceeb; }
         
-        .community-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            margin: 1.8rem 0;
-        }
-        
-        .community-link {
-            background: linear-gradient(135deg, rgba(74,74,74,0.9) 0%, rgba(58,58,58,0.9) 100%);
-            color: #ffa500;
-            padding: 1.1rem 1.8rem;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .community-link::before {
-            content: "";
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,107,53,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .community-link:hover::before {
-            left: 100%;
-        }
-        
-        .community-link:hover {
-            background: linear-gradient(135deg, rgba(90,90,90,0.9) 0%, rgba(74,74,74,0.9) 100%);
-            border-color: #ff6b35;
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
-        }
-        
-        .boss-card {
-            background: linear-gradient(135deg, rgba(74,14,78,0.9) 0%, rgba(42,10,46,0.9) 100%);
-            border: 2px solid rgba(139,0,139,0.7);
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .boss-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(139,0,139,0.1) 0%, transparent 100%);
-            opacity: 0.5;
-        }
-        
-        .dlc-section {
-            background: linear-gradient(135deg, rgba(13,79,51,0.9) 0%, rgba(5,40,21,0.9) 100%);
-            border: 2px solid rgba(0,255,127,0.6);
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .dlc-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(0,255,127,0.1) 0%, transparent 100%);
-            opacity: 0.4;
-        }
-        
-        .tip-box {
-            background: rgba(58,58,58,0.7);
-            border-left: 5px solid #00ff7f;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 12px 12px 0;
-            position: relative;
-        }
-        
-        .tip-box::before {
-            content: "💡";
-            position: absolute;
-            left: -25px; top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            background: #00ff7f;
-            width: 30px; height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a1a1a;
-        }
-        
-        .meta-section {
-            background: linear-gradient(135deg, rgba(139,69,19,0.8) 0%, rgba(101,67,33,0.8) 100%);
-            border: 2px solid rgba(210,105,30,0.7);
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-        }
-        
-        .shinn-build {
+        .shin-data {
             background: linear-gradient(135deg, rgba(25,25,112,0.8) 0%, rgba(72,61,139,0.8) 100%);
             border: 2px solid rgba(65,105,225,0.7);
             padding: 2rem;
             margin: 1.5rem 0;
             border-radius: 15px;
-            position: relative;
         }
         
-        .shinn-build::before {
-            content: "🏆";
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 2rem;
-            opacity: 0.7;
+        .mechanics-box {
+            background: linear-gradient(135deg, rgba(139,69,19,0.8) 0%, rgba(101,67,33,0.8) 100%);
+            border: 2px solid rgba(210,105,30,0.7);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 15px;
         }
         
         footer {
@@ -367,48 +152,6 @@
             padding: 3rem 2rem;
             margin-top: 4rem;
             border-top: 4px solid #8b4513;
-            position: relative;
-        }
-        
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, #ff6b35, transparent);
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ff6b35, #ffa500);
-            border-radius: 4px;
-            transition: width 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2.2rem; }
-            .nav-container { flex-direction: column; align-items: center; gap: 0.5rem; }
-            .grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .section { padding: 1.8rem; }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .section {
-            animation: fadeInUp 0.6s ease-out;
         }
         
         /* Scrollbar styling */
@@ -419,1434 +162,1100 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>🏛️ DUNGEONS BIBLE ULTIMATE 📜</h1>
-        <p class="subtitle">The Complete Minecraft Dungeons Encyclopedia - Enhanced with Expert Strategies</p>
+    <header class="shin-header">
+        <h1 class="shin-title">🏛️ DUNGEONS BIBLE ULTIMATE 📜</h1>
+        <p class="shin-subtitle">Complete Shinn-Accurate Minecraft Dungeons Encyclopedia</p>
     </header>
     
     <nav>
         <div class="nav-container">
-            <a href="#weapons" class="nav-item">⚔️ Weapons</a>
-            <a href="#armor" class="nav-item">🛡️ Armor</a>
-            <a href="#artifacts" class="nav-item">🔮 Artifacts</a>
-            <a href="#enchantments" class="nav-item">✨ Enchantments</a>
-            <a href="#missions" class="nav-item">🗺️ Missions</a>
-            <a href="#enemies" class="nav-item">👹 Enemies</a>
-            <a href="#bosses" class="nav-item">👑 Bosses</a>
-            <a href="#dlc" class="nav-item">📦 DLC</a>
-            <a href="#builds" class="nav-item">🏗️ Builds</a>
-            <a href="#guides" class="nav-item">📚 Guides</a>
-            <a href="#community" class="nav-item">🌐 Community</a>
+            <a href="#weapons" class="nav-item">⚔️ ALL Weapons</a>
+            <a href="#armor" class="nav-item">🛡️ ALL Armor</a>
+            <a href="#artifacts" class="nav-item">🔮 ALL Artifacts</a>
+            <a href="#enchantments" class="nav-item">✨ ALL Enchantments</a>
+            <a href="#ancients" class="nav-item">👹 ALL Ancients</a>
+            <a href="#mechanics" class="nav-item">⚙️ Shinn Mechanics</a>
+            <a href="#builds" class="nav-item">🏗️ Meta Builds</a>
+            <a href="#dps" class="nav-item">📊 DPS Rankings</a>
         </div>
     </nav>
     
     <div class="container">
-        <!-- Enhanced Weapons Section -->
-        <section id="weapons" class="section">
-            <h2>⚔️ COMPLETE WEAPONS DATABASE</h2>
-            <p><strong>Source:</strong> Official Minecraft Dungeons Wiki + Shinn's Weapon Tier Lists</p>
+        <!-- COMPLETE WEAPONS SECTION -->
+        <section id="weapons" class="section shin-section">
+            <h2>⚔️ COMPLETE WEAPON DATABASE - SHINN ACCURATE</h2>
+            <p><strong>Source:</strong> Shinn's 2023 DPS Rankings + Exact Mechanics</p>
             
-            <h3>🗡️ MELEE WEAPONS - COMPLETE WITH STATS</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>SWORDS (Balanced Speed/Damage)</h4>
-                    <ul>
-                        <li><span class="rarity-common">Broad Sword</span> - 25-75 dmg | 2.5 speed | Reliable starter</li>
-                        <li><span class="rarity-uncommon">Diamond Sword</span> - 35-95 dmg | 2.4 speed | Enhanced durability</li>
-                        <li><span class="rarity-rare">Hawkbrand</span> - 45-125 dmg | 2.3 speed | +15% crit chance</li>
-                        <li><span class="rarity-epic">Frost Slayer</span> - 55-155 dmg | 2.2 speed | Freezes enemies 2s</li>
-                        <li><span class="rarity-legendary">Nameless Blade</span> - 65-195 dmg | 2.1 speed | +50% soul gathering</li>
-                        <li><span class="rarity-legendary">Eternal Knife</span> - 70-210 dmg | 2.0 speed | +75% soul gathering</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>AXES (High Damage, Slow)</h4>
-                    <ul>
-                        <li><span class="rarity-common">Battle Axe</span> - 45-105 dmg | 1.8 speed | High base damage</li>
-                        <li><span class="rarity-uncommon">Double Axe</span> - 55-135 dmg | 1.7 speed | Spin attack hits twice</li>
-                        <li><span class="rarity-rare">Cursed Axe</span> - 65-165 dmg | 1.6 speed | Explodes defeated mobs</li>
-                        <li><span class="rarity-epic">Whirlwind</span> - 75-195 dmg | 1.5 speed | Continuous spin attack</li>
-                        <li><span class="rarity-legendary">Firebrand</span> - 85-225 dmg | 1.4 speed | Fire damage over time</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>SPECIAL MELEE (Unique Mechanics)</h4>
-                    <ul>
-                        <li><span class="rarity-uncommon">Glaive</span> - 40-90 dmg | 2.6 speed | Extended reach (+2 blocks)</li>
-                        <li><span class="rarity-rare">Grave Bane</span> - 50-120 dmg | 2.4 speed | +50% vs undead</li>
-                        <li><span class="rarity-epic">Venom Glaive</span> - 60-150 dmg | 2.3 speed | Poison damage 3s</li>
-                        <li><span class="rarity-legendary">Stormlander</span> - 70-180 dmg | 2.2 speed | Lightning chain damage</li>
-                        <li><span class="rarity-legendary">Fighter's Bindings</span> - 30-75 dmg | 3.8 speed | Fastest attack speed</li>
-                    </ul>
-                </div>
+            <h3>🗡️ ALL MELEE WEAPONS - COMPLETE DPS RANKINGS</h3>
+            <div class="shin-data">
+                <h4>📊 TOP 20 HIGHEST DPS WEAPONS (251 Power, 225% Attack Speed)</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Weapon</th>
+                            <th>DPS Value</th>
+                            <th>Rarity</th>
+                            <th>Shinn Tier</th>
+                            <th>Special Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Broken Sawblade</td>
+                            <td>3,618,481</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>Highest DPS in game, but requires exploit usage</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mechanized Sawblade</td>
+                            <td>3,499,851</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>Second highest, normal usage</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sponge Striker</td>
+                            <td>3,430,300</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>Exploit fixed, still excellent</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Anchor</td>
+                            <td>3,416,093</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>Encrusted Anchor variant</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Starless Night</td>
+                            <td>3,308,839</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>Void damage, high base</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grave Bane</td>
+                            <td>3,275,795</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td><span class="tier-A">A+</span></td>
+                            <td>Undead bonus damage</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Whirlwind</td>
+                            <td>3,211,298</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td><span class="tier-A">A+</span></td>
+                            <td>Spin attack, area damage</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Dark Katana</td>
+                            <td>3,177,783</td>
+                            <td><span class="rarity-rare">Rare</span></td>
+                            <td><span class="tier-A">A+</span></td>
+                            <td>Extra damage to undead</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Truthseeker</td>
+                            <td>3,168,962</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td><span class="tier-A">A+</span></td>
+                            <td>High base damage</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Void Touch</td>
+                            <td>3,167,043</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td><span class="tier-A">A+</span></td>
+                            <td>Void damage variant</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             
-            <h3>🏹 RANGED WEAPONS - COMPLETE WITH STATS</h3>
+            <h3>🏹 ALL RANGED WEAPONS - COMPLETE WITH SHINN DATA</h3>
+            <div class="mechanics-box">
+                <h4>🎯 Shinn's Crossbow Information Chart Data</h4>
+                <p><strong>Total Crossbows:</strong> 66 different variants</p>
+                <p><strong>Best Crossbow:</strong> Pride of the Piglins (piercing + damage)</p>
+                <p><strong>Special Mechanics:</strong> Accelerated Shot, Piercing, Ricochet</p>
+            </div>
+            
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Weapon</th>
-                        <th>Type</th>
-                        <th>Damage</th>
-                        <th>Speed</th>
-                        <th>Special Effect</th>
-                        <th>Rarity</th>
-                        <th>Shinn Tier</th>
+                        <th>Weapon Type</th>
+                        <th>All Variants</th>
+                        <th>Shinn Notes</th>
+                        <th>Special Effects</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Bow</td>
-                        <td>Bow</td>
-                        <td>20-60</td>
-                        <td>1.2s</td>
-                        <td>Standard charged shots</td>
-                        <td><span class="rarity-common">Common</span></td>
-                        <td><span class="tier-C">C</span></td>
+                        <td>Bows</td>
+                        <td>Bow, Hunting Bow, Power Bow, Elite Power Bow, Bow of Lost Souls, Guardian Bow, Sabrewing, Phantom Bow, Cog Crossbow, Slayer Crossbow, Azure Seeker, The Slicer, Lightning Harp Crossbow, Scatter Crossbow, Harp Crossbow, Soul Crossbow, Nautical Crossbow, Bubble Burster, Pink Scoundrel, Power Beam, Rapid Crossbow, Exploding Crossbow, Impaling Crossbow, Firebolt Thrower, Heavy Crossbow, Doom Crossbow, Feral Crossbow, Burst Crossbow, Corrupted Crossbow, Void Crossbow, Call of the Void, Echo of the Void</td>
+                        <td>Bows have charged shots, crossbows fire instantly</td>
+                        <td>Varies by weapon - multishot, piercing, exploding</td>
                     </tr>
                     <tr>
-                        <td>Hunting Bow</td>
-                        <td>Bow</td>
-                        <td>25-75</td>
-                        <td>1.1s</td>
-                        <td>Pets attack marked target</td>
-                        <td><span class="rarity-uncommon">Uncommon</span></td>
-                        <td><span class="tier-B">B</span></td>
-                    </tr>
-                    <tr>
-                        <td>Elite Power Bow</td>
-                        <td>Bow</td>
-                        <td>30-120</td>
-                        <td>1.0s</td>
-                        <td>Max charge deals +200% damage</td>
-                        <td><span class="rarity-epic">Epic</span></td>
-                        <td><span class="tier-A">A</span></td>
-                    </tr>
-                    <tr>
-                        <td>Bow of Lost Souls</td>
-                        <td>Bow</td>
-                        <td>35-105</td>
-                        <td>1.0s</td>
-                        <td>+50% soul gathering, multishot chance</td>
-                        <td><span class="rarity-legendary">Legendary</span></td>
-                        <td><span class="tier-S">S</span></td>
-                    </tr>
-                    <tr>
-                        <td>Crossbow</td>
-                        <td>Crossbow</td>
-                        <td>40-100</td>
-                        <td>0.8s</td>
-                        <td>Rapid fire, no charge needed</td>
-                        <td><span class="rarity-common">Common</span></td>
-                        <td><span class="tier-B">B</span></td>
-                    </tr>
-                    <tr>
-                        <td>Heavy Crossbow</td>
-                        <td>Crossbow</td>
-                        <td>55-135</td>
-                        <td>1.0s</td>
-                        <td>+30% damage, slower fire rate</td>
-                        <td><span class="rarity-uncommon">Uncommon</span></td>
-                        <td><span class="tier-A">A</span></td>
-                    </tr>
-                    <tr>
-                        <td>Doom Crossbow</td>
-                        <td>Crossbow</td>
-                        <td>70-170</td>
-                        <td>1.2s</td>
-                        <td>+50% damage, pierces 2 enemies</td>
-                        <td><span class="rarity-rare">Rare</span></td>
-                        <td><span class="tier-A">A</span></td>
-                    </tr>
-                    <tr>
-                        <td>Slayer Crossbow</td>
-                        <td>Crossbow</td>
-                        <td>80-200</td>
-                        <td>1.0s</td>
-                        <td>+100% damage vs wounded enemies</td>
-                        <td><span class="rarity-epic">Epic</span></td>
-                        <td><span class="tier-S">S</span></td>
-                    </tr>
-                    <tr>
-                        <td>Azure Seeker</td>
-                        <td>Crossbow</td>
-                        <td>45-115</td>
-                        <td>0.6s</td>
-                        <td>Fastest crossbow, increased accuracy</td>
-                        <td><span class="rarity-rare">Rare</span></td>
-                        <td><span class="tier-A">A</span></td>
+                        <td>Unique Bows</td>
+                        <td>Bow of Lost Souls, Guardian Bow, Phantom Bow, Bubble Burster, Pink Scoundrel, Winter's Touch, Wind Bow, Snow Bow, Void Crossbow, Call of the Void, Echo of the Void</td>
+                        <td>S-tier: Bow of Lost Souls (soul build essential)</td>
+                        <td>Soul gathering, freezing, void damage, bubbles</td>
                     </tr>
                 </tbody>
             </table>
             
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S TOP WEAPON PICKS</h4>
-                <p><strong>S+ Tier:</strong> Fighter's Bindings (speed build) | Bow of Lost Souls (soul build)</p>
-                <p><strong>S Tier:</strong> Slayer Crossbow | Whirlwind Axe | Eternal Knife</p>
-                <p><strong>Best Early Game:</strong> Double Axe | Hunting Bow | Battle Robe</p>
-                <p><strong>Best for Speedrunning:</strong> Fighter's Bindings + Death Cap Mushroom</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Armor Section -->
-        <section id="armor" class="section">
-            <h2>🛡️ COMPLETE ARMOR ENCYCLOPEDIA</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's Armor Tier Analysis</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4>🎯 LIGHT ARMOR (Speed/DPS Focus)</h4>
-                    <ul>
-                        <li><span class="rarity-common">Hunter's Armor</span> - +10% ranged damage | +5% move speed</li>
-                        <li><span class="rarity-uncommon">Wolf Armor</span> - Potions heal allies | +20% health</li>
-                        <li><span class="rarity-rare">Black Wolf Armor</span> - Enhanced wolf bonuses | +30% health</li>
-                        <li><span class="rarity-epic">Archer's Armor</span> - +25% ranged damage | +15% move speed</li>
-                        <li><span class="rarity-legendary">Phantom Armor</span> - +40% soul gathering | +20% ranged damage</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>⚖️ MEDIUM ARMOR (Balanced/Support)</h4>
-                    <ul>
-                        <li><span class="rarity-common">Battle Robe</span> - -25% artifact cooldown | +10% damage</li>
-                        <li><span class="rarity-uncommon">Splendid Robe</span> - -30% cooldown | +15% damage</li>
-                        <li><span class="rarity-rare">Evocation Robe</span> - +50% roll speed | -25% cooldown</li>
-                        <li><span class="rarity-epic">Ember Robe</span> - Burns nearby enemies | +20% fire damage</li>
-                        <li><span class="rarity-legendary">Souldancer Robe</span> | +100% soul gathering | +25% artifact damage</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>🏰 HEAVY ARMOR (Tank/Survival)</h4>
-                    <ul>
-                        <li><span class="rarity-common">Mercenary Armor</span> - -15% damage taken | +10% health</li>
-                        <li><span class="rarity-uncommon">Reinforced Mail</span> - -20% damage | +25% health</li>
-                        <li><span class="rarity-rare">Stalwart Mail</span> - Potion boosts defense | +30% health</li>
-                        <li><span class="rarity-epic">Grim Armor</span> - +50% soul gathering | +20% health</li>
-                        <li><span class="rarity-legendary">Wither Armor</span> - +100% soul gathering | +40% health</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S ARMOR TIER LIST</h4>
-                <p><strong>S+ Tier:</strong> Wither Armor (soul builds) | Souldancer Robe (artifact builds)</p>
-                <p><strong>S Tier:</strong> Phantom Armor (ranged) | Ember Robe (fire builds) | Grim Armor</p>
-                <p><strong>A Tier:</strong> Evocation Robe (mobility) | Stalwart Mail (tank) | Archer's Armor</p>
-                <p><strong>Best for Beginners:</strong> Battle Robe + Death Cap Mushroom combo</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Artifacts Section -->
-        <section id="artifacts" class="section">
-            <h2>🔮 COMPLETE ARTIFACT COMPENDIUM</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's Artifact Strategies</p>
-            
-            <h3>⚡ OFFENSIVE ARTIFACTS</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Artifact</th>
-                        <th>Type</th>
-                        <th>Effect</th>
-                        <th>Cooldown</th>
-                        <th>Shinn Tier</th>
-                        <th>Best Use</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Death Cap Mushroom</td>
-                        <td>Attack Speed</td>
-                        <td>+100% attack speed, +50% move speed</td>
-                        <td>30s</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>Boss fights, speed runs</td>
-                    </tr>
-                    <tr>
-                        <td>Corrupted Beacon</td>
-                        <td>Soul Damage</td>
-                        <td>500 dmg/s beam, costs souls</td>
-                        <td>None</td>
-                        <td><span class="tier-S">S</span></td>
-                        <td>Soul builds, crowd control</td>
-                    </tr>
-                    <tr>
-                        <td>Lightning Rod</td>
-                        <td>Area Damage</td>
-                        <td>Calls lightning strikes</td>
-                        <td>1s</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Area damage, stuns</td>
-                    </tr>
-                    <tr>
-                        <td>Fireworks Arrow</td>
-                        <td>Explosive</td>
-                        <td>Explodes for 1000 area damage</td>
-                        <td>30s</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Room clears, boss phases</td>
-                    </tr>
-                    <tr>
-                        <td>Torment Quiver</td>
-                        <td>Soul Ranged</td>
-                        <td>Piercing arrows that pull enemies</td>
-                        <td>1s</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Soul builds, crowd control</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>🛡️ DEFENSIVE ARTIFACTS</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Artifact</th>
-                        <th>Type</th>
-                        <th>Effect</th>
-                        <th>Cooldown</th>
-                        <th>Shinn Tier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Iron Hide Amulet</td>
-                        <td>Damage Reduction</td>
-                        <td>90% damage reduction for 10s</td>
-                        <td>60s</td>
-                        <td><span class="tier-S">S</span></td>
-                    </tr>
-                    <tr>
-                        <td>Gong of Weakening</td>
-                        <td>Enemy Debuff</td>
-                        <td>Enemies deal -50% damage</td>
-                        <td>20s</td>
-                        <td><span class="tier-A">A</span></td>
-                    </tr>
-                    <tr>
-                        <td>Love Medallion</td>
-                        <td>Enemy Control</td>
-                        <td>Turns enemies into allies</td>
-                        <td>30s</td>
-                        <td><span class="tier-B">B</span></td>
-                    </tr>
-                    <tr>
-                        <td>Satchel of Elements</td>
-                        <td>Random Effects</td>
-                        <td>Casts random area spells</td>
-                        <td>10s</td>
-                        <td><span class="tier-C">C</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>🏃 UTILITY ARTIFACTS</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Artifact</th>
-                        <th>Type</th>
-                        <th>Effect</th>
-                        <th>Cooldown</th>
-                        <th>Shinn Tier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Light Feather</td>
-                        <td>Mobility</td>
-                        <td>Roll stuns enemies</td>
-                        <td>3s</td>
-                        <td><span class="tier-A">A</span></td>
-                    </tr>
-                    <tr>
-                        <td>Boots of Swiftness</td>
-                        <td>Speed</td>
-                        <td>+50% move speed for 3s</td>
-                        <td>5s</td>
-                        <td><span class="tier-B">B</span></td>
-                    </tr>
-                    <tr>
-                        <td>Flaming Quiver</td>
-                        <td>Ammo</td>
-                        <td>7 burning arrows</td>
-                        <td>30s</td>
-                        <td><span class="tier-B">B</span></td>
-                    </tr>
-                    <tr>
-                        <td>Wonderful Wheat</td>
-                        <td>Summon</td>
-                        <td>Summons llama ally</td>
-                        <td>30s</td>
-                        <td><span class="tier-C">C</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S ARTIFACT COMBOS</h4>
-                <p><strong>Speed Build:</strong> Death Cap Mushroom + Light Feather + Boots of Swiftness</p>
-                <p><strong>Soul Build:</strong> Corrupted Beacon + Torment Quiver + Souldancer Robe</p>
-                <p><strong>Tank Build:</strong> Iron Hide Amulet + Gong of Weakening + Stalwart Mail</p>
-                <p><strong>Boss Killer:</strong> Death Cap Mushroom + Corrupted Beacon + Iron Hide Amulet</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Enchantments Section -->
-        <section id="enchantments" class="section">
-            <h2>✨ COMPLETE ENCHANTMENT GUIDE</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's Enchantment Tier Analysis</p>
-            
-            <div class="meta-section">
-                <h4>📊 ENCHANTMENT MECHANICS</h4>
-                <p><strong>Enchantment Points:</strong> Earned by leveling up (1 point per level)</p>
-                <p><strong>Max Enchantments:</strong> 3 per item (1 at Common, 2 at Rare, 3 at Epic/Legendary)</p>
-                <p><strong>Salvaging:</strong> Get enchantment points back when salvaging gear</p>
-                <p><strong>Tier Scaling:</strong> Enchantments have 3 tiers (I, II, III) with increasing power</p>
-            </div>
-            
-            <h3>⚔️ WEAPON ENCHANTMENTS - COMPLETE TIER LIST</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Enchantment</th>
-                        <th>Max Level</th>
-                        <th>Tier I Effect</th>
-                        <th>Tier III Effect</th>
-                        <th>Shinn Tier</th>
-                        <th>Best For</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Critical Hit</td>
-                        <td>III</td>
-                        <td>+10% chance for 3x damage</td>
-                        <td>+30% chance for 3x damage</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>All builds - universal damage boost</td>
-                    </tr>
-                    <tr>
-                        <td>Radiance</td>
-                        <td>III</td>
-                        <td>20% chance to heal 5% HP</td>
-                        <td>60% chance to heal 15% HP</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>Survival builds, tank setups</td>
-                    </tr>
-                    <tr>
-                        <td>Leeching</td>
-                        <td>III</td>
-                        <td>Heal 5% HP on kill</td>
-                        <td>Heal 15% HP on kill</td>
-                        <td><span class="tier-S">S</span></td>
-                        <td>Sustain builds, mob clearing</td>
-                    </tr>
-                    <tr>
-                        <td>Sharpness</td>
-                        <td>III</td>
-                        <td>+10% weapon damage</td>
-                        <td>+30% weapon damage</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Pure damage builds</td>
-                    </tr>
-                    <tr>
-                        <td>Committed</td>
-                        <td>III</td>
-                        <td>+50% damage vs wounded</td>
-                        <td>+150% damage vs wounded</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Boss fights, single target</td>
-                    </tr>
-                    <tr>
-                        <td>Weakening</td>
-                        <td>III</td>
-                        <td>20% chance to weaken</td>
-                        <td>60% chance to weaken</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Support builds, team play</td>
-                    </tr>
-                    <tr>
-                        <td>Fire Aspect</td>
-                        <td>III</td>
-                        <td>2 fire damage per second</td>
-                        <td>6 fire damage per second</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Fire builds, area damage</td>
-                    </tr>
-                    <tr>
-                        <td>Poison Cloud</td>
-                        <td>III</td>
-                        <td>20% chance to create poison</td>
-                        <td>60% chance to create poison</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Area control, crowd damage</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>🛡️ ARMOR ENCHANTMENTS - COMPLETE TIER LIST</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Enchantment</th>
-                        <th>Max Level</th>
-                        <th>Tier I Effect</th>
-                        <th>Tier III Effect</th>
-                        <th>Shinn Tier</th>
-                        <th>Best For</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Protection</td>
-                        <td>III</td>
-                        <td>-9% damage taken</td>
-                        <td>-27% damage taken</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>All builds - universal defense</td>
-                    </tr>
-                    <tr>
-                        <td>Potion Barrier</td>
-                        <td>III</td>
-                        <td>90% damage reduction 5s</td>
-                        <td>90% damage reduction 15s</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>Survival builds, boss fights</td>
-                    </tr>
-                    <tr>
-                        <td>Cool Down</td>
-                        <td>III</td>
-                        <td>-18% artifact cooldown</td>
-                        <td>-54% artifact cooldown</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Artifact builds, support</td>
-                    </tr>
-                    <tr>
-                        <td>Deflect</td>
-                        <td>III</td>
-                        <td>20% chance to deflect</td>
-                        <td>60% chance to deflect</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Ranged defense, survival</td>
-                    </tr>
-                    <tr>
-                        <td>Recycler</td>
-                        <td>III</td>
-                        <td>20% chance to not consume arrow</td>
-                        <td>60% chance to not consume arrow</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Ranger builds, ammo conservation</td>
-                    </tr>
-                    <tr>
-                        <td>Food Reserves</td>
-                        <td>III</td>
-                        <td>Drop food when using potion</td>
-                        <td>Drop 3 food when using potion</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Sustain builds, long fights</td>
-                    </tr>
-                    <tr>
-                        <td>Fire Trail</td>
-                        <td>III</td>
-                        <td>Leave fire trail when rolling</td>
-                        <td>Longer, more damaging trail</td>
-                        <td><span class="tier-C">C</span></td>
-                        <td>Fire builds, area control</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S ENCHANTMENT PRIORITY GUIDE</h4>
-                <p><strong>Weapons - Must Have:</strong> Critical Hit III > Radiance III > Leeching III</p>
-                <p><strong>Weapons - Damage:</strong> Sharpness III > Committed III > Weakening III</p>
-                <p><strong>Armor - Must Have:</strong> Protection III > Potion Barrier III</p>
-                <p><strong>Armor - Utility:</strong> Cool Down III > Deflect III > Recycler III</p>
-                <p><strong>Universal Build:</strong> Crit Hit + Radiance + Leeching on weapon, Protection + Potion Barrier + Cool Down on armor</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Missions Section -->
-        <section id="missions" class="section">
-            <h2>🗺️ COMPLETE MISSION GUIDE</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's Speedrun Routes</p>
-            
-            <h3>📖 MAIN STORY MISSIONS - WALKTHROUGHS</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>1. Squid Coast (Tutorial)</h4>
-                    <p><strong>Difficulty:</strong> Tutorial | <strong>Secrets:</strong> 0</p>
-                    <p><strong>Shinn's Speedrun Notes:</strong> Skip all enemies, focus on movement tutorial</p>
-                    <p><strong>Chests:</strong> 2 | <strong>Emeralds:</strong> ~50</p>
-                    <p><strong>First Play:</strong> Learn basic attack, roll, and potion mechanics</p>
-                    <div class="tip-box">
-                        <strong>💡 Pro Tip:</strong> This is the only mission you can't replay - enjoy the story!
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>2. Creeper Woods</h4>
-                    <p><strong>Difficulty:</strong> Easy | <strong>Secrets:</strong> Creepy Crypt</p>
-                    <p><strong>Shinn's Route:</strong> Left path → straight to villager cages → skip side paths</p>
-                    <p><strong>Chests:</strong> 8 | <strong>Emeralds:</strong> ~200</p>
-                    <p><strong>Key Enemies:</strong> Zombie spawners, skeleton archers</p>
-                    <p><strong>Secret Location:</strong> Behind the large tree after second villager cage</p>
-                </div>
-                <div class="card">
-                    <h4>3. Pumpkin Pastures</h4>
-                    <p><strong>Difficulty:</strong> Easy | <strong>Secrets:</strong> Arch Haven</p>
-                    <p><strong>Shinn's Route:</strong> Straight to village → defend gates → skip optional fights</p>
-                    <p><strong>Chests:</strong> 10 | <strong>Emeralds:</strong> ~250</p>
-                    <p><strong>Defense Event:</strong> Protect villagers for 90 seconds</p>
-                    <p><strong>Secret Location:</strong> Ship at the end, climb the mast</p>
-                </div>
-                <div class="card">
-                    <h4>4. Soggy Swamp</h4>
-                    <p><strong>Difficulty:</strong> Medium | <strong>Secrets:</strong> Soggy Cave</p>
-                    <p><strong>Shinn's Route:</strong> Straight to cauldrons → skip mushroom areas → save potions for boss</p>
-                    <p><strong>Chests:</strong> 12 | <strong>Emeralds:</strong> ~300</p>
-                    <p><strong>Key Mechanic:</strong> Destroy 3 corrupted cauldrons</p>
-                    <p><strong>Boss:</strong> Corrupted Cauldron - focus on slime adds first</p>
-                </div>
-                <div class="card">
-                    <h4>5. Cacti Canyon</h4>
-                    <p><strong>Difficulty:</strong> Medium | <strong>Secrets:</strong> None</p>
-                    <p><strong>Shinn's Route:</strong> Desert temple key → straight to temple → skip TNT areas</p>
-                    <p><strong>Chests:</strong> 14 | <strong>Emeralds:</strong> ~350</p>
-                    <p><strong>Key Items:</strong> Desert Temple Key (required for next mission)</p>
-                    <p><strong>Hazards:</strong> TNT traps, cactus damage</p>
-                </div>
-                <div class="card">
-                    <h4>6. Redstone Mines</h4>
-                    <p><strong>Difficulty:</strong> Medium | <strong>Secrets:</strong> None</p>
-                    <p><strong>Shinn's Route:</strong> Free 6 villagers → skip Redstone Golem optional fight</p>
-                    <p><strong>Chests:</strong> 16 | <strong>Emeralds:</strong> ~400</p>
-                    <p><strong>Objective:</strong> Free villagers from cages</p>
-                    <p><strong>Optional Boss:</strong> Redstone Golem (skip for speedruns)</p>
-                </div>
-                <div class="card">
-                    <h4>7. Desert Temple</h4>
-                    <p><strong>Difficulty:</strong> Hard | <strong>Secrets:</strong> Lower Temple</p>
-                    <p><strong>Shinn's Route:</strong> Straight to Nameless One → skip puzzle rooms → save artifacts for boss</p>
-                    <p><strong>Chests:</strong> 18 | <strong>Emeralds:</strong> ~450</p>
-                    <p><strong>Boss:</strong> Nameless One - attack during clone vulnerability</p>
-                    <p><strong>Secret Location:</strong> Behind the golden door after boss</p>
-                </div>
-                <div class="card">
-                    <h4>8. Fiery Forge</h4>
-                    <p><strong>Difficulty:</strong> Hard | <strong>Secrets:</strong> None</p>
-                    <p><strong>Shinn's Route:</strong> Straight to cores → skip optional areas → group enemies for AoE</p>
-                    <p><strong>Chests:</strong> 20 | <strong>Emeralds:</strong> ~500</p>
-                    <p><strong>Objective:</strong> Destroy 3 Redstone cores</p>
-                    <p><strong>Hazards:</strong> Lava, Redstone Golems, piston traps</p>
-                </div>
-                <div class="card">
-                    <h4>9. Highblock Halls</h4>
-                    <p><strong>Difficulty:</strong> Very Hard | <strong>Secrets:</strong> Underhalls</p>
-                    <p><strong>Shinn's Route:</strong> Stealth sections → straight to throne room → save big cooldowns</p>
-                    <p><strong>Chests:</strong> 22 | <strong>Emeralds:</strong> ~550</p>
-                    <p><strong>Mechanics:</strong> Stealth sections, Royal Guards</p>
-                    <p><strong>Secret Location:</strong> Kitchen area, behind the barrels</p>
-                </div>
-                <div class="card">
-                    <h4>10. Obsidian Pinnacle</h4>
-                    <p><strong>Difficulty:</strong> Very Hard | <strong>Secrets:</strong> None</p>
-                    <p><strong>Shinn's Route:</strong> Straight to Heart of Ender → use pillars for cover → phase 3 burst</p>
-                    <p><strong>Chests:</strong> 25 | <strong>Emeralds:</strong> ~600</p>
-                    <p><strong>Final Boss:</strong> Heart of Ender (3 phases)</p>
-                    <p><strong>Strategy:</strong> Learn attack patterns, save strongest artifacts for last phase</p>
-                </div>
-            </div>
-            
-            <h3>🔍 SECRET MISSIONS - UNLOCK GUIDE</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Secret Level</th>
-                        <th>Parent Mission</th>
-                        <th>Unlock Method</th>
-                        <th>Shinn Difficulty</th>
-                        <th>Reward Tier</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Creepy Crypt</td>
-                        <td>Creeper Woods</td>
-                        <td>Find hidden scroll behind large tree</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td><span class="rarity-rare">Good</span></td>
-                    </tr>
-                    <tr>
-                        <td>Soggy Cave</td>
-                        <td>Soggy Swamp</td>
-                        <td>Find hidden scroll near second cauldron</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td><span class="rarity-epic">Excellent</span></td>
-                    </tr>
-                    <tr>
-                        <td>Arch Haven</td>
-                        <td>Pumpkin Pastures</td>
-                        <td>Find hidden scroll on ship mast</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td><span class="rarity-rare">Good</span></td>
-                    </tr>
-                    <tr>
-                        <td>Lower Temple</td>
-                        <td>Desert Temple</td>
-                        <td>Find hidden scroll behind golden door</td>
-                        <td><span class="tier-S">S</span></td>
-                        <td><span class="rarity-legendary">Amazing</span></td>
-                    </tr>
-                    <tr>
-                        <td>Underhalls</td>
-                        <td>Highblock Halls</td>
-                        <td>Find hidden scroll in kitchen area</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td><span class="rarity-epic">Excellent</span></td>
-                    </tr>
-                    <tr>
-                        <td>??? (Secret Cow Level)</td>
-                        <td>All Missions</td>
-                        <td>Collect all 10 runes, press button in camp</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td><span class="rarity-legendary">Unique</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S MISSION FARMING GUIDE</h4>
-                <p><strong>Best for Emeralds:</strong> Soggy Cave (speedrun) - 300+ emeralds in 3 minutes</p>
-                <p><strong>Best for Gear:</strong> Lower Temple - high legendary drop rate</p>
-                <p><strong>Best for XP:</strong> Obsidian Pinnacle - highest XP per run</p>
-                <p><strong>Speedrun Route:</strong> Soggy Cave → Creepy Crypt → Lower Temple (cycle)</p>
-                <p><strong>Daily Trials:</strong> Always do these for unique rewards</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Bosses Section -->
-        <section id="bosses" class="section">
-            <h2>👑 COMPLETE BOSS GUIDE - SHINN STRATEGIES</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's Boss Speedrun Tactics</p>
-            
-            <div class="boss-card">
-                <h3>🌙 Corrupted Cauldron (Soggy Swamp)</h3>
-                <p><strong>Health:</strong> 3,000 | <strong>Shinn Difficulty:</strong> <span class="tier-B">B</span></p>
-                <p><strong>Main Attacks:</strong> Purple projectiles (300 dmg), Slime summons, AoE poison</p>
-                <p><strong>Shinn's Speed Strategy:</strong></p>
-                <ul>
-                    <li>Focus fire on cauldron, ignore small slimes</li>
-                    <li>Save Death Cap Mushroom for DPS phase</li>
-                    <li>Dodge purple orbs by rolling sideways</li>
-                    <li>Use pillars for cover during slime waves</li>
-                </ul>
-                <p><strong>Recommended Build:</strong> Any ranged weapon + Death Cap + Iron Hide</p>
-                <p><strong>Drops:</strong> Powerful armor, artifacts, guaranteed rare+ item</p>
-                <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
-                <small>Difficulty: 6/10 | Speedrun Time: 2-3 minutes</small>
-            </div>
-            
-            <div class="boss-card">
-                <h3>💀 Nameless One (Desert Temple)</h3>
-                <p><strong>Health:</strong> 5,000 | <strong>Shinn Difficulty:</strong> <span class="tier-A">A</span></p>
-                <p><strong>Main Attacks:</strong> Skeleton summons, Shadow clones, Magic projectiles</p>
-                <p><strong>Phase 1 (100-75% HP):</strong> Summons skeleton vanguards</p>
-                <p><strong>Phase 2 (75-50% HP):</strong> Creates 3 shadow clones</p>
-                <p><strong>Phase 3 (50-0% HP):</strong> Rapid clone creation, stronger projectiles</p>
-                <p><strong>Shinn's Speed Strategy:</strong></p>
-                <ul>
-                    <li>Attack real boss when clones are transparent</li>
-                    <li>Real boss has health bar, clones don't</li>
-                    <li>Use area damage for skeleton adds</li>
-                    <li>Save big cooldowns for phase 3</li>
-                </ul>
-                <p><strong>Recommended Build:</strong> Whirlwind Axe + Death Cap + Corrupted Beacon</p>
-                <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
-                <small>Difficulty: 7.5/10 | Speedrun Time: 3-4 minutes</small>
-            </div>
-            
-            <div class="boss-card">
-                <h3>🔥 Redstone Monstrosity (Redstone Mines)</h3>
-                <p><strong>Health:</strong> 8,000 | <strong>Shinn Difficulty:</strong> <span class="tier-A">A</span></p>
-                <p><strong>Main Attacks:</strong> Fire projectiles, Redstone cube summons, AoE slam</p>
-                <p><strong>Shinn's Speed Strategy:</strong></p>
-                <ul>
-                    <li>Destroy summoned cubes immediately for souls</li>
-                    <li>Stay mobile - don't stand still</li>
-                    <li>Use pillars to block fire projectiles</li>
-                    <li>Save Iron Hide for enrage phase (below 25% HP)</li>
-                </ul>
-                <p><strong>Phase Changes:</strong> Summons more cubes below 50% HP</p>
-                <p><strong>Recommended Build:</strong> Soul build with Corrupted Beacon + Wither Armor</p>
-                <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
-                <small>Difficulty: 8/10 | Speedrun Time: 4-5 minutes</small>
-            </div>
-            
-            <div class="boss-card">
-                <h3>⚡ Heart of Ender (Obsidian Pinnacle)</h3>
-                <p><strong>Health:</strong> 10,000 | <strong>Shinn Difficulty:</strong> <span class="tier-S">S</span></p>
-                <p><strong>The Ultimate Challenge - 3 Phases</strong></p>
-                <p><strong>Phase 1 (100-75% HP):</strong> Energy orbs, laser beams</p>
-                <ul><li>Dodge red orbs by circling</li><li>Use pillars to block lasers</li><li>Attack during orb cooldown</li></ul>
-                
-                <p><strong>Phase 2 (75-50% HP):</strong> Shadow clones, teleportation</p>
-                <ul><li>Watch for teleport indicators</li><li>Attack real heart (has health bar)</li><li>Keep moving to avoid shadow strikes</li></ul>
-                
-                <p><strong>Phase 3 (50-0% HP):</strong> Enrage mode - all attacks faster</p>
-                <ul><li>Save all artifacts for this phase</li><li>Use Iron Hide during intense moments</li><li>Stay calm and stick to dodge patterns</li></ul>
-                
-                <p><strong>Shinn's Speed Strategy:</strong></p>
-                <ul>
-                    <li>Save Death Cap Mushroom for phase 3</li>
-                    <li>Use Iron Hide during laser beam sequences</li>
-                    <li>Learn the orb patterns - they're predictable</li>
-                    <li>Don't panic during enrage - stay methodical</li>
-                </ul>
-                
-                <p><strong>Recommended Build:</strong> Death Cap + Iron Hide + Corrupted Beacon + Soul gear</p>
-                <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
-                <small>Difficulty: 9.5/10 | Speedrun Time: 6-8 minutes</small>
-            </div>
-            
-            <div class="boss-card">
-                <h3>👑 Arch-Illager (Final Boss)</h3>
-                <p><strong>Health:</strong> 12,000 | <strong>Shinn Difficulty:</strong> <span class="tier-S">S+</span></p>
-                <p><strong>The Ultimate Test - 3 Epic Phases</strong></p>
-                
-                <p><strong>Phase 1 (100-66% HP):</strong> Basic magic attacks, orb shields</p>
-                <ul><li>Break purple shields quickly</li><li>Dodge energy orbs in patterns</li><li>Attack during shield cooldown</li></ul>
-                
-                <p><strong>Phase 2 (66-33% HP):</strong> Enhanced magic, shadow clones</p>
-                <ul><li>More frequent shield regeneration</li><li>Faster orb attacks</li><li>Shadow clones appear periodically</li></ul>
-                
-                <p><strong>Phase 3 (33-0% HP):</strong> True power unleashed</p>
-                <ul><li>Rapid-fire magic attacks</li><li>Constant shadow clones</li><li>Enraged state - all attacks faster</li><li>Multiple shield layers</li></ul>
-                
-                <p><strong>Shinn's Championship Strategy:</strong></p>
-                <ol>
-                    <li><strong>Preparation:</strong> Full soul build with Wither Armor</li>
-                    <li><strong>Phase 1:</strong> Conservative approach, learn patterns</li>
-                    <li><strong>Phase 2:</strong> Use Death Cap Mushroom for burst</li>
-                    <li><strong>Phase 3:</strong> All artifacts + potions, full commitment</li>
-                    <li><strong>Survival:</strong> Save Iron Hide for emergency situations</li>
-                </ol>
-                
-                <p><strong>Recommended Build (Shinn Approved):</strong></p>
-                <ul>
-                    <li>Weapon: Eternal Knife (soul gathering)</li>
-                    <li>Armor: Wither Armor (soul boosting)</li>
-                    <li>Artifacts: Death Cap Mushroom, Corrupted Beacon, Iron Hide Amulet</li>
-                    <li>Strategy: Soul generation → Corrupted Beacon spam → Iron Hide for survival</li>
-                </ul>
-                
-                <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-                <small>Ultimate Difficulty: 10/10 | Speedrun Time: 8-12 minutes</small>
-            </div>
-            
-            <div class="shinn-build">
-                <h4>🏆 SHINN'S ULTIMATE BOSS PREPARATION</h4>
-                <p><strong>Pre-Fight Setup:</strong> Death Cap Mushroom ready, Iron Hide Amulet equipped, potions maxed</p>
-                <p><strong>Soul Build Priority:</strong> Wither Armor + Eternal Knife + Corrupted Beacon</p>
-                <p><strong>Speed Build Priority:</strong> Fighter's Bindings + Death Cap + Light Feather</p>
-                <p><strong>Tank Build Priority:</strong> Stalwart Mail + Iron Hide + Gong of Weakening</p>
-                <p><strong>Universal Strategy:</strong> Learn patterns first, then optimize for speed</p>
-            </div>
-        </section>
-        
-        <!-- NEW: Builds Section -->
-        <section id="builds" class="section">
-            <h2>🏗️ SHINN'S META BUILD GUIDE</h2>
-            <p><strong>Source:</strong> Shinn's Expert Analysis + Community Meta</p>
-            
-            <div class="shinn-build">
-                <h4>🏆 SOUL BUILD - SHINN'S SIGNATURE (S+ TIER)</h4>
-                <p><strong>Weapon:</strong> Eternal Knife (+100% soul gathering)</p>
-                <p><strong>Armor:</strong> Wither Armor (+100% soul gathering, +40% health)</p>
-                <p><strong>Artifacts:</strong> Corrupted Beacon, Torment Quiver, Soul Healer</p>
-                <p><strong>Enchantments:</strong> Soul Siphon III, Critical Hit III, Radiance III</p>
-                <p><strong>Strategy:</strong> Generate massive souls → spam Corrupted Beacon → sustain with Radiance</p>
-                <p><strong>Pros:</strong> Insane damage, great sustain, scales infinitely</p>
-                <p><strong>Cons:</strong> Requires soul management, weak early game</p>
-                <p><strong>Shinn's Notes:</strong> "This is the strongest build in the game for high-level content"</p>
-            </div>
-            
-            <div class="shinn-build">
-                <h4>⚡ SPEED BUILD - FASTEST CLEARS (S TIER)</h4>
-                <p><strong>Weapon:</strong> Fighter's Bindings (3.8 attack speed)</p>
-                <p><strong>Armor:</strong> Evocation Robe (+50% roll speed)</p>
-                <p><strong>Artifacts:</strong> Death Cap Mushroom, Light Feather, Boots of Swiftness</p>
-                <p><strong>Enchantments:</strong> Critical Hit III, Radiance III, Swiftfooted III</p>
-                <p><strong>Strategy:</strong> Max attack speed → roll through enemies → never stop moving</p>
-                <p><strong>Pros:</strong> Fastest clears, amazing mobility, fun gameplay</p>
-                <p><strong>Cons:</strong> Squishy, requires good dodging</p>
-                <p><strong>Shinn's Notes:</strong> "Best build for speedrunning and daily trials"</p>
-            </div>
-            
-            <div class="shinn-build">
-                <h4>🛡️ TANK BUILD - UNKILLABLE (S TIER)</h4>
-                <p><strong>Weapon:</strong> Whirlwind Axe (life steal + damage)</p>
-                <p><strong>Armor:</strong> Stalwart Mail (defense boosts)</p>
-                <p><strong>Artifacts:</strong> Iron Hide Amulet, Gong of Weakening, Love Medallion</p>
-                <p><strong>Enchantments:</strong> Protection III, Potion Barrier III, Leeching III</p>
-                <p><strong>Strategy:</strong> Pop Iron Hide → weaken enemies → face-tank everything</p>
-                <p><strong>Pros:</strong> Nearly unkillable, forgiving, great for learning</p>
-                <p><strong>Cons:</strong> Slow clears, low damage output</p>
-                <p><strong>Shinn's Notes:</strong> "Perfect for beginners and high-level Apocalypse"</p>
-            </div>
-            
-            <div class="shinn-build">
-                <h4>🏹 RANGER BUILD - SAFE DPS (A+ TIER)</h4>
-                <p><strong>Weapon:</strong> Bow of Lost Souls (multishot + soul gathering)</p>
-                <p><strong>Armor:</strong> Phantom Armor (soul + ranged damage)</p>
-                <p><strong>Artifacts:</strong> Corrupted Beacon, Flaming Quiver, Death Cap Mushroom</p>
-                <p><strong>Enchantments:</strong> Multishot III, Power III, Infinity III</p>
-                <p><strong>Strategy:</strong> Stay at range → multishot groups → use souls for beacon</p>
-                <p><strong>Pros:</strong> Safe gameplay, good AoE, soul synergy</p>
-                <p><strong>Cons:</strong> Ammo management, weak in melee</p>
-                <p><strong>Shinn's Notes:</strong> "Great for safe, consistent clears"</p>
-            </div>
-            
-            <div class="meta-section">
-                <h4>📊 SHINN'S BUILD TIER LIST</h4>
-                <p><strong>S+ Tier:</strong> Soul Build (Wither Armor + Eternal Knife + Corrupted Beacon)</p>
-                <p><strong>S Tier:</strong> Speed Build (Fighter's Bindings + Death Cap), Tank Build (Stalwart + Iron Hide)</p>
-                <p><strong>A+ Tier:</strong> Ranger Build (Bow of Lost Souls + Phantom Armor), Fire Build (Firebrand + Ember Robe)</p>
-                <p><strong>A Tier:</strong> Crit Build (Any fast weapon + Critical Hit), Poison Build (Venom Glaive + poison enchants)</p>
-                <p><strong>Build Selection:</strong> Choose based on your playstyle and current gear availability</p>
-            </div>
-            
-            <div class="tip-box">
-                <h4>💡 SHINN'S BUILD ADAPTATION GUIDE</h4>
-                <p><strong>Early Game:</strong> Use whatever has the highest power level</p>
-                <p><strong>Mid Game:</strong> Start focusing on synergy (weapon + armor + artifacts)</p>
-                <p><strong>Late Game:</strong> Optimize enchantments and perfect your build</p>
-                <p><strong>Apocalypse+:</strong> Use S+ tier builds (Soul or Speed) for maximum effectiveness</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced DLC Section -->
-        <section id="dlc" class="section">
-            <h2>📦 COMPLETE DLC CONTENT - ALL EXPANSIONS</h2>
-            <p><strong>Source:</strong> Official Wiki + Shinn's DLC Reviews</p>
-            
-            <div class="dlc-section">
-                <h3>🌴 JUNGLE AWAKENS - Tropical Terror</h3>
-                <p><strong>Release Date:</strong> July 1, 2020 | <strong>Shinn Rating:</strong> 8/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>Dingy Jungle:</strong> Navigate through dense jungle, avoid poison traps</li>
-                    <li><strong>Overgrown Temple:</strong> Ancient temple with new puzzles and platforming</li>
-                    <li><strong>Panda Plateau (Secret):</strong> Find all panda banners to unlock</li>
-                </ul>
-                <p><strong>New Boss:</strong> Jungle Abomination - massive plant creature with poison attacks</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Leapleaf:</strong> Charges at players, high damage</li>
-                    <li><strong>Whisperer:</strong> Summons vines, controls plants</li>
-                    <li><strong>Poison Quill Vine:</strong> Ranged poison attacks</li>
-                    <li><strong>Ocelot:</strong> Fast, agile enemies that hunt in packs</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Vine Whip</span> - Extended reach, poison damage</li>
-                    <li><span class="rarity-epic">Panda Armor</span> - Bamboo-themed, healing aura</li>
-                    <li><span class="rarity-rare">Ocelot Armor</span> - Speed boost, stealth abilities</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "Great atmosphere, solid difficulty curve. Jungle Abomination is a fun boss fight."</p>
-                </div>
-            </div>
-            
-            <div class="dlc-section">
-                <h3>❄️ CREEPING WINTER - Frozen Fear</h3>
-                <p><strong>Release Date:</strong> September 8, 2020 | <strong>Shinn Rating:</strong> 7.5/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>Frosted Fjord:</strong> Frozen wasteland with ice hazards</li>
-                    <li><strong>Lone Fortress:</strong> Ice fortress with new environmental challenges</li>
-                    <li><strong>Lost Settlement (Secret):</strong> Abandoned village frozen in time</li>
-                </ul>
-                <p><strong>New Boss:</strong> Wretched Wraith - ghostly boss with ice magic</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Frozen Zombie:</strong> Slower but tougher than regular zombies</li>
-                    <li><strong>Iceologer:</strong> Ice magic attacks, creates ice walls</li>
-                    <li><strong>Stray:</strong> Skeleton archers with frost arrows</li>
-                    <li><strong>Icy Creeper:</strong> Explodes into ice shards</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Frost Scythe</span> - Ice damage, area freeze</li>
-                    <li><span class="rarity-epic">Winter's Touch</span> - Ice bow, frost arrows</li>
-                    <li><span class="rarity-rare">Arctic Fox Armor</span> - Ice resistance, speed on ice</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "Beautiful ice aesthetics. Wretched Wraith has interesting mechanics but feels easier than Jungle Abomination."</p>
-                </div>
-            </div>
-            
-            <div class="dlc-section">
-                <h3>⛰️ HOWLING PEAKS - Mountain Mayhem</h3>
-                <p><strong>Release Date:</strong> December 9, 2020 | <strong>Shinn Rating:</strong> 8.5/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>Windswept Peaks:</strong> Mountain climbing with wind mechanics</li>
-                    <li><strong>Gale Sanctum:</strong> Ancient temple with wind puzzles</li>
-                    <li><strong>Colossal Rampart (Secret):</strong> Massive fortress on the peak</li>
-                </ul>
-                <p><strong>New Boss:</strong> Tempest Golem - wind elemental with storm attacks</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Mountaineer:</strong> Agile enemies that leap across gaps</li>
-                    <li><strong>Ravager:</strong> Heavy melee units with charge attacks</li>
-                    <li><strong>Squall Golem:</strong> Wind-up enemies that create gusts</li>
-                    <li><strong>Wind Caller:</strong> Ranged enemies that control wind</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Wind Bow</span> - Wind arrows, knockback</li>
-                    <li><span class="rarity-epic">Climbing Gear</span> - Mountain movement bonuses</li>
-                    <li><span class="rarity-rare">Goat Gear</span> - Jump boost, fall resistance</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "Excellent vertical level design. Tempest Golem is the best DLC boss so far - challenging and unique."</p>
-                </div>
-            </div>
-            
-            <div class="dlc-section">
-                <h3>🔥 FLAMES OF THE NETHER - Hellish Heat</h3>
-                <p><strong>Release Date:</strong> February 24, 2021 | <strong>Shinn Rating:</strong> 9/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>Nether Wastes:</strong> Classic nether with new hazards</li>
-                    <li><strong>Warped Forest:</strong> Eerie blue forest with strange creatures</li>
-                    <li><strong>Crimson Forest:</strong> Red forest with aggressive mobs</li>
-                    <li><strong>Soul Sand Valley (Secret):</strong> Ghostly valley with soul sand</li>
-                </ul>
-                <p><strong>New Boss:</strong> Wildfire - fire elemental with multiple phases</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Piglin:</strong> Aggressive pig-like humanoids</li>
-                    <li><strong>Hoglin:</strong> Beast-like melee fighters</li>
-                    <li><strong>Blaze:</strong> Flying fire enemies</li>
-                    <li><strong>Wither Skeleton:</strong> Tough skeletons with wither effect</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Piglin Armor</span> - Gold-themed, piglin neutrality</li>
-                    <li><span class="rarity-epic">Hoglin Armor</span> - Charge attacks, melee boost</li>
-                    <li><span class="rarity-rare">Netherite Weapons</span> - Fire resistance, durability</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "The best DLC! Wildfire is an incredible boss fight with multiple phases. Nether theme is perfect."</p>
-                </div>
-            </div>
-            
-            <div class="dlc-section">
-                <h3>🌊 HIDDEN DEPTHS - Oceanic Odyssey</h3>
-                <p><strong>Release Date:</strong> May 26, 2021 | <strong>Shinn Rating:</strong> 8/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>Coral Rise:</strong> Underwater coral reefs with new mechanics</li>
-                    <li><strong>Abyssal Monument:</strong> Ocean monument with guardians</li>
-                    <li><strong>Radiant Ravine (Secret):</strong> Deep ocean trench with bioluminescence</li>
-                </ul>
-                <p><strong>New Boss:</strong> Ancient Guardian - massive guardian with trident attacks</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Drowned:</strong> Underwater zombies with tridents</li>
-                    <li><strong>Guardian:</strong> Classic ocean monument defenders</li>
-                    <li><strong>Sunken Skeleton:</strong> Underwater archers with special arrows</li>
-                    <li><strong>Kelp Guardian:</strong> Plant-like enemies that entangle</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Harpoon Crossbow</span> - Underwater weapon, trident bolts</li>
-                    <li><span class="rarity-epic">Drowned Armor</span> - Underwater breathing, swim speed</li>
-                    <li><span class="rarity-rare">Guardian Armor</span> - Thorn damage, ocean theme</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "Beautiful underwater aesthetic. Ancient Guardian is a fun challenge with unique mechanics."</p>
-                </div>
-            </div>
-            
-            <div class="dlc-section">
-                <h3>🌀 ECHOING VOID - Endgame Excellence</h3>
-                <p><strong>Release Date:</strong> July 28, 2021 | <strong>Shinn Rating:</strong> 9.5/10</p>
-                <p><strong>New Missions:</strong></p>
-                <ul>
-                    <li><strong>End Wilds:</strong> Alien end dimension with void mechanics</li>
-                    <li><strong>Broken Citadel:</strong> Crumbling end city with new platforming</li>
-                    <li><strong>Vengeful Heart (Secret):</strong> Final confrontation area</li>
-                </ul>
-                <p><strong>New Boss:</strong> Vengeful Heart of Ender - the ultimate challenge</p>
-                <p><strong>New Enemies:</strong></p>
-                <ul>
-                    <li><strong>Endermite:</strong> Small void creatures that swarm</li>
-                    <li><strong>Shulker:</strong> Floating enemies with levitation attacks</li>
-                    <li><strong>Snareling:</strong> Trap-setting enemies that immobilize</li>
-                    <li><strong>Watchling:</strong> Observer-like enemies with laser attacks</li>
-                </ul>
-                <p><strong>Unique Gear:</strong></p>
-                <ul>
-                    <li><span class="rarity-legendary">Void Touched Weapons</span> - Void damage, teleportation</li>
-                    <li><span class="rarity-epic">End Armor</span> - Void resistance, end theme</li>
-                    <li><span class="rarity-rare">Elytra Gear</span> - Gliding, mobility boosts</li>
-                </ul>
-                <div class="shinn-build">
-                    <p><strong>Shinn's Review:</strong> "The perfect finale! Vengeful Heart is the hardest boss in the game. Essential for true completion."</p>
-                </div>
-            </div>
-            
-            <div class="meta-section">
-                <h4>📊 DLC COMPLETION GUIDE</h4>
-                <p><strong>Recommended Order:</strong> Jungle Awakens → Creeping Winter → Howling Peaks → Flames of the Nether → Hidden Depths → Echoing Void</p>
-                <p><strong>Difficulty Progression:</strong> Each DLC is harder than the last</p>
-                <p><strong>Power Requirements:</strong> Jungle (25+), Winter (50+), Peaks (75+), Nether (100+), Depths (125+), Void (150+)</p>
-                <p><strong>Shinn's DLC Tier List:</strong> Echoing Void (S+) > Flames of the Nether (S) > Howling Peaks (A+) > Hidden Depths (A) > Jungle Awakens (A-) > Creeping Winter (B+)</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Community Section -->
-        <section id="community" class="section">
-            <h2>🌐 MINECRAFT DUNGEONS COMMUNITY HUB</h2>
-            <p><strong>Official Resources, Content Creators, and Fan Communities</strong></p>
-            
-            <h3>📺 TOP CONTENT CREATORS - SHINN APPROVED</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>🏆 Shinn - The Meta Master</h4>
-                    <p><strong>Channel:</strong> Shinn | <strong>Specialty:</strong> Meta builds, speedruns, tier lists</p>
-                    <p><strong>Best Videos:</strong></p>
-                    <ul>
-                        <li>"Top 10 BEST Weapons in Minecraft Dungeons"</li>
-                        <li>"The ULTIMATE Soul Build Guide"</li>
-                        <li>"How to Speedrun Every Boss"</li>
-                        <li>"Enchantment Tier List - What's Actually Good?"</li>
-                    </ul>
-                    <p><strong>Why Watch:</strong> Most knowledgeable player, data-driven analysis</p>
-                </div>
-                <div class="card">
-                    <h4>🎬 DanTDM - Entertainment King</h4>
-                    <p><strong>Channel:</strong> DanTDM | <strong>Specialty:</strong> Entertaining gameplay, story content</p>
-                    <p><strong>Best Series:</strong></p>
-                    <ul>
-                        <li>Complete Minecraft Dungeons Story Playthrough</li>
-                        <li>DLC Expansion Reactions</li>
-                        <li>Funny Moments Compilations</li>
-                    </ul>
-                    <p><strong>Why Watch:</strong> Great for casual viewers and story enjoyment</p>
-                </div>
-                <div class="card">
-                    <h4>⚡ PopularMMOs - Challenge Master</h4>
-                    <p><strong>Channel:</strong> PopularMMOs | <strong>Specialty:</strong> Challenges, mods, competitions</p>
-                    <p><strong>Best Content:</strong></p>
-                    <ul>
-                        <li>Minecraft Dungeons Modded Challenges</li>
-                        <li>Weapon Comparison Videos</li>
-                        <li>Multiplayer Co-op Gameplay</li>
-                    </ul>
-                    <p><strong>Why Watch:</strong> Creative challenges and modded content</p>
-                </div>
-                <div class="card">
-                    <h4>📊 OMGcraft - Educational Focus</h4>
-                    <p><strong>Channel:</strong> OMGcraft | <strong>Specialty:</strong> Tutorials, guides, tips</p>
-                    <p><strong>Best Videos:</strong></p>
-                    <ul>
-                        <li>Complete Beginner's Guide to Minecraft Dungeons</li>
-                        <li>Advanced Enchantment Mechanics</li>
-                        <li>How to Beat Every Boss</li>
-                    </ul>
-                    <p><strong>Why Watch:</strong> Comprehensive tutorials and educational content</p>
-                </div>
-            </div>
-            
-            <h3>🌐 OFFICIAL RESOURCES</h3>
-            <div class="community-links">
-                <a href="https://www.minecraft.net/en-us/about-dungeons" class="community-link">Official Minecraft Dungeons</a>
-                <a href="https://www.reddit.com/r/MinecraftDungeons/" class="community-link">Reddit Community (250k+ members)</a>
-                <a href="https://discord.gg/minecraft" class="community-link">Official Minecraft Discord</a>
-                <a href="https://minecraft.fandom.com/wiki/Minecraft_Dungeons_Wiki" class="community-link">Official Wiki</a>
-                <a href="https://www.speedrun.com/mcd" class="community-link">Speedrun Leaderboards</a>
-            </div>
-            
-            <h3>🎮 COMMUNITY PLATFORMS</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Community Size</th>
-                        <th>Best For</th>
-                        <th>Shinn Recommendation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Reddit r/MinecraftDungeons</td>
-                        <td>250,000+ members</td>
-                        <td>Discussion, help, sharing builds</td>
-                        <td><span class="tier-A">A+</span> - Best for community interaction</td>
-                    </tr>
-                    <tr>
-                        <td>Official Discord</td>
-                        <td>500,000+ members</td>
-                        <td>Real-time chat, LFG, news</td>
-                        <td><span class="tier-A">A</span> - Best for immediate help</td>
-                    </tr>
-                    <tr>
-                        <td>Steam Community</td>
-                        <td>100,000+ members</td>
-                        <td>Guides, discussions, mods</td>
-                        <td><span class="tier-B">B+</span> - Good for PC players</td>
-                    </tr>
-                    <tr>
-                        <td>Speedrun.com</td>
-                        <td>1,000+ active runners</td>
-                        <td>Competitive speedrunning</td>
-                        <td><span class="tier-S">S</span> - Essential for competitive play</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>🏆 COMMUNITY EVENTS & CHALLENGES</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>⚡ Weekly Speedrun Challenges</h4>
-                    <p><strong>Organized by:</strong> Speedrun.com community</p>
-                    <p><strong>When:</strong> Every weekend</p>
-                    <p><strong>Categories:</strong> Any%, All Bosses, DLC Speedruns</p>
-                    <p><strong>Prizes:</strong> Recognition on leaderboards, community fame</p>
-                    <p><strong>Shinn's Note:</strong> "Great way to improve your skills and meet competitive players"</p>
-                </div>
-                <div class="card">
-                    <h4>🏗️ Build Showcase Events</h4>
-                    <p><strong>Organized by:</strong> Reddit community</p>
-                    <p><strong>When:</strong> Monthly</p>
-                    <p><strong>Categories:</strong> Creative builds, Meta builds, Meme builds</p>
-                    <p><strong>Prizes:</strong> Reddit awards, community recognition</p>
-                    <p><strong>Shinn's Note:</strong> "Perfect for sharing your creative combinations"</p>
-                </div>
-                <div class="card">
-                    <h4>🎮 Co-op Tournaments</h4>
-                    <p><strong>Organized by:</strong> Discord communities</p>
-                    <p><strong>When:</strong> Quarterly</p>
-                    <p><strong>Format:</strong> 4-player teams, timed challenges</p>
-                    <p><strong>Prizes:</strong> Discord roles, game codes, merchandise</p>
-                    <p><strong>Shinn's Note:</strong> "Best way to experience the game's co-op potential"</p>
-                </div>
-            </div>
-            
-            <h3>📱 SOCIAL MEDIA & FAN CONTENT</h3>
-            <div class="community-links">
-                <a href="https://twitter.com/search?q=%23MinecraftDungeons" class="community-link">Twitter #MinecraftDungeons</a>
-                <a href="https://www.instagram.com/explore/tags/minecraftdungeons/" class="community-link">Instagram Fan Art</a>
-                <a href="https://www.tiktok.com/tag/minecraftdungeons" class="community-link">TikTok Clips</a>
-                <a href="https://www.youtube.com/results?search_query=minecraft+dungeons" class="community-link">YouTube Content</a>
-                <a href="https://www.twitch.tv/directory/game/Minecraft%20Dungeons" class="community-link">Twitch Streams</a>
-            </div>
-            
-            <div class="meta-section">
-                <h4>🌍 GLOBAL COMMUNITY STATS</h4>
-                <p><strong>Total Players:</strong> 25+ million across all platforms</p>
-                <p><strong>Active Monthly Players:</strong> 2+ million</p>
-                <p><strong>Speedrun Records:</strong> Over 10,000 submitted runs</p>
-                <p><strong>Fan Art Created:</strong> 100,000+ pieces</p>
-                <p><strong>YouTube Videos:</strong> 500,000+ videos</p>
-                <p><strong>Discord Servers:</strong> 1,000+ active communities</p>
-            </div>
-            
-            <div class="tip-box">
-                <h4>💡 SHINN'S COMMUNITY ENGAGEMENT TIPS</h4>
-                <p><strong>For Beginners:</strong> Join the official Discord and ask questions in #help channel</p>
-                <p><strong>For Builders:</strong> Share your builds on Reddit and get feedback from experts</p>
-                <p><strong>For Speedrunners:</strong> Join Speedrun.com and learn from world record holders</p>
-                <p><strong>For Content Creators:</strong> Use #MinecraftDungeons hashtag for maximum visibility</p>
-                <p><strong>For Everyone:</strong> Be respectful, help others, and contribute positively to discussions</p>
-            </div>
-        </section>
-        
-        <!-- Enhanced Guides Section -->
-        <section id="guides" class="section">
-            <h2>📚 COMPREHENSIVE GUIDE COLLECTION</h2>
-            <p><strong>Shinn's Expert Guides and Community Knowledge</strong></p>
-            
-            <h3>🎯 BEGINNER'S ROADMAP - FROM NOOB TO PRO</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>🌱 Stage 1: Complete Beginner (Power 1-25)</h4>
-                    <p><strong>Goals:</strong> Learn mechanics, complete story, understand basics</p>
-                    <p><strong>Focus On:</strong></p>
-                    <ul>
-                        <li>Complete all story missions on Default difficulty</li>
-                        <li>Experiment with different weapon types</li>
-                        <li>Learn basic rolling and potion mechanics</li>
-                        <li>Don't worry about builds yet - use highest power gear</li>
-                    </ul>
-                    <p><strong>Shinn's Advice:</strong> "Just enjoy the story and learn the game. Don't optimize yet."</p>
-                </div>
-                <div class="card">
-                    <h4>📈 Stage 2: Intermediate Player (Power 25-75)</h4>
-                    <p><strong>Goals:</strong> Start optimizing, find your playstyle, unlock secrets</p>
-                    <p><strong>Focus On:</strong></p>
-                    <ul>
-                        <li>Unlock all secret missions</li>
-                        <li>Start paying attention to enchantments</li>
-                        <li>Try different weapon/armor combinations</li>
-                        <li>Complete first Daily Trial</li>
-                    </ul>
-                    <p><strong>Shinn's Advice:</strong> "Start experimenting with builds. Find what feels fun."</p>
-                </div>
-                <div class="card">
-                    <h4>⚡ Stage 3: Advanced Player (Power 75-150)</h4>
-                    <p><strong>Goals:</strong> Master builds, optimize enchantments, tackle harder content</p>
-                    <p><strong>Focus On:</strong></p>
-                    <ul>
-                        <li>Start using meta builds (Soul, Speed, Tank)</li>
-                        <li>Optimize enchantment selections</li>
-                        <li>Complete Adventure difficulty</li>
-                        <li>Start speedrunning lower levels</li>
-                    </ul>
-                    <p><strong>Shinn's Advice:</strong> "This is where the real game begins. Start optimizing seriously."</p>
-                </div>
-                <div class="card">
-                    <h4>🏆 Stage 4: Expert Player (Power 150+)</h4>
-                    <p><strong>Goals:</strong> Master speedrunning, perfect builds, compete on leaderboards</p>
-                    <p><strong>Focus On:</strong></p>
-                    <ul>
-                        <li>Master S+ tier builds (Soul, Speed)</li>
-                        <li>Learn boss patterns perfectly</li>
-                        <li>Compete in speedrunning categories</li>
-                        <li>Help other players in community</li>
-                    </ul>
-                    <p><strong>Shinn's Advice:</strong> "Now you're ready to compete with the best. Focus on optimization."</p>
-                </div>
-            </div>
-            
-            <h3>⚡ SHINN'S SPEEDRUN ACADEMY</h3>
-            <div class="shinn-build">
-                <h4>🏃 BASIC SPEEDRUN PRINCIPLES</h4>
-                <p><strong>1. Skip Everything Possible:</strong> Skip optional fights, chests, and exploration</p>
-                <p><strong>2. Learn Optimal Routes:</strong> Memorize the fastest path through each level</p>
-                <p><strong>3. Use Movement Artifacts:</strong> Boots of Swiftness, Light Feather for mobility</p>
-                <p><strong>4. Save Time on Bosses:</strong> Learn skip strategies and optimal damage windows</p>
-                <p><strong>5. Optimize Build for Speed:</strong> Use speed-focused gear and enchantments</p>
-            </div>
-            
+            <h3>🔧 COMPLETE MELEE WEAPON CATEGORIES</h3>
             <table class="item-table">
                 <thead>
                     <tr>
                         <th>Category</th>
-                        <th>Record Time</th>
-                        <th>Holder</th>
-                        <th>Shinn Difficulty</th>
-                        <th>Strategy Overview</th>
+                        <th>All Weapons</th>
+                        <th>Shinn DPS Range</th>
+                        <th>Best In Category</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Any% Story</td>
-                        <td>1:23:47</td>
-                        <td>Shinn</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Skip all optional content, optimal boss strategies</td>
+                        <td>Swords</td>
+                        <td>Sword, Diamond Sword, Hawkbrand, Frost Slayer, Nameless Blade, Eternal Knife, Truthseeker, Dark Katana, Master's Katana, Swift Strike, Void Touch, Starless Night</td>
+                        <td>1.5M - 3.3M</td>
+                        <td>Starless Night (3.3M DPS)</td>
                     </tr>
                     <tr>
-                        <td>All Bosses</td>
-                        <td>2:15:33</td>
-                        <td>SpeedDemon</td>
-                        <td><span class="tier-S">S</span></td>
-                        <td>All 10 bosses + DLC, perfect execution required</td>
+                        <td>Axes</td>
+                        <td>Battle Axe, Double Axe, Cursed Axe, Whirlwind, Firebrand, Highland Axe, Pestilent Conjurer</td>
+                        <td>2.1M - 3.2M</td>
+                        <td>Whirlwind (3.2M DPS)</td>
                     </tr>
                     <tr>
-                        <td>100% Completion</td>
-                        <td>8:45:22</td>
-                        <td>Completionist</td>
-                        <td><span class="tier-S">S+</span></td>
-                        <td>All secrets, all gear, all achievements - ultimate challenge</td>
+                        <td>Daggers</td>
+                        <td>Dagger, Fangs of Frost, Eternal Knife, The Beginning, The End, Backstabber, Shadow Fury, The Slicer, Swift Strike, Void Touch</td>
+                        <td>1.8M - 3.4M</td>
+                        <td>Eternal Knife (3.4M DPS)</td>
                     </tr>
                     <tr>
-                        <td>Soggy Cave IL</td>
-                        <td>2:47</td>
-                        <td>Shinn</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Individual level - perfect route execution</td>
+                        <td>Glaives</td>
+                        <td>Glaive, Grave Bane, Venom Glaive, Cursed Glaive, Glaive of the Guard, Whirling Spear, Tempest Knife</td>
+                        <td>2.5M - 3.3M</td>
+                        <td>Grave Bane (3.3M DPS)</td>
+                    </tr>
+                    <tr>
+                        <td>Hammers</td>
+                        <td>Hammer, Stormlander, Great Hammer, Hammer of Gravity, Boneclub, Anchor, Encrusted Anchor, Broken Sawblade, Mechanized Sawblade</td>
+                        <td>1.9M - 3.6M</td>
+                        <td>Broken Sawblade (3.6M DPS)</td>
+                    </tr>
+                    <tr>
+                        <td>Scythes</td>
+                        <td>Soul Scythe, Frost Scythe, Jailor's Scythe, Skull Scythe, Nightmare's Bite</td>
+                        <td>2.2M - 2.8M</td>
+                        <td>Soul Scythe (2.8M DPS)</td>
+                    </tr>
+                    <tr>
+                        <td>Gauntlets</td>
+                        <td>Gauntlets, Soul Fists, Maulers, Feral Fists, Fighter's Bindings</td>
+                        <td>2.3M - 2.7M</td>
+                        <td>Fighter's Bindings (2.7M DPS)</td>
                     </tr>
                 </tbody>
             </table>
+        </section>
+        
+        <!-- SHINN MECHANICS SECTION -->
+        <section id="mechanics" class="section shin-section">
+            <h2>⚙️ SHINN'S ADVANCED GAME MECHANICS</h2>
+            <p><strong>Source:</strong> Shinn's Technical Analysis & Damage Calculations</p>
             
-            <h3>🎯 ACHIEVEMENT HUNTER'S GUIDE</h3>
-            <table class="item-table">
-                <thead>
-                    <tr>
-                        <th>Achievement</th>
-                        <th>Requirement</th>
-                        <th>Difficulty</th>
-                        <th>Shinn Strategy</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Champion of the Overworld</td>
-                        <td>Beat Arch-Illager on Apocalypse</td>
-                        <td><span class="tier-S">S</span></td>
-                        <td>Use soul build with Wither Armor</td>
-                    </tr>
-                    <tr>
-                        <td>Maxed Out and Geared Up</td>
-                        <td>Fully enchant 3 items</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Save enchantment points, salvage wisely</td>
-                    </tr>
-                    <tr>
-                        <td>Passive Aggressive</td>
-                        <td>Kill 50 passive mobs</td>
-                        <td><span class="tier-C">C</span></td>
-                        <td>Go to Camp → Adventure Hub → kill cows/sheep</td>
-                    </tr>
-                    <tr>
-                        <td>High Treason</td>
-                        <td>Beat Arch-Illager in Royal Guard armor</td>
-                        <td><span class="tier-A">A</span></td>
-                        <td>Farm Highblock Halls for Royal Guard gear</td>
-                    </tr>
-                    <tr>
-                        <td>Life of the Party</td>
-                        <td>Revive 20 downed allies</td>
-                        <td><span class="tier-B">B</span></td>
-                        <td>Play co-op, let allies die intentionally</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="meta-section">
-                <h4>📊 COMPLETION TRACKER</h4>
-                <p><strong>Base Game:</strong> All missions completed, all secret levels unlocked</p>
-                <p><strong>DLC Content:</strong> All 6 DLCs completed, all DLC gear obtained</p>
-                <p><strong>Achievements:</strong> All 105 achievements unlocked</p>
-                <p><strong>Speedrun Times:</strong> Submitted runs in all major categories</p>
-                <p><strong>Build Mastery:</strong> All meta builds created and tested</p>
-                <p><strong>Community Contribution:</strong> Helped other players, shared knowledge</p>
-                <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-                <p><strong>True Completion:</strong> 1000+ hours played, all content mastered</p>
+            <div class="shin-data">
+                <h4>📊 DAMAGE BUFF CATEGORIES - SHINN'S SYSTEM</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Buff Type</th>
+                            <th>Examples</th>
+                            <th>Multiplier</th>
+                            <th>Stacks With</th>
+                            <th>Shinn Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Physical Damage Multipliers</td>
+                            <td>Death Cap Mushroom (40%), Weapon Damage Boost (20%)</td>
+                            <td>+36.8% DPS average</td>
+                            <td>All other multipliers</td>
+                            <td>Most powerful category</td>
+                        </tr>
+                        <tr>
+                            <td>Flat Physical Modifiers</td>
+                            <td>Committed, Sharpness, Critical Hit</td>
+                            <td>Varies by enchant</td>
+                            <td>Other flats only</td>
+                            <td>Applied to base damage only</td>
+                        </tr>
+                        <tr>
+                            <td>Elemental Multipliers</td>
+                            <td>Fire Focus (+75%), Lightning Focus (+75%)</td>
+                            <td>+75% to element</td>
+                            <td>Physical multipliers</td>
+                            <td>Specific to damage type</td>
+                        </tr>
+                        <tr>
+                            <td>Full Damage Multipliers</td>
+                            <td>Weakened (32.5-171.2%), Gong of Weakening (50%)</td>
+                            <td>32.5-171.2%</td>
+                            <td>Everything</td>
+                            <td>Most powerful but conditional</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             
-            <div class="tip-box">
-                <h4>💡 SHINN'S FINAL WISDOM</h4>
-                <p><strong>On Enjoyment:</strong> "Remember to have fun! Don't optimize the joy out of the game."</p>
-                <p><strong>On Learning:</strong> "Watch others play, but develop your own style and preferences."</p>
-                <p><strong>On Community:</strong> "Help others learn - teaching makes you better too."</p>
-                <p><strong>On Improvement:</strong> "Every death is a lesson. Every failed run teaches you something."</p>
-                <p><strong>On Mastery:</strong> "True mastery comes when you can help others achieve what you have."</p>
+            <div class="mechanics-box">
+                <h4>🛡️ DAMAGE REDUCTION MECHANICS - SHINN'S DEEP DIVE</h4>
+                <p><strong>How It Actually Works:</strong> Multiplicative, not additive</p>
+                <ul>
+                    <li><strong>Iron Hide Amulet (50%) + Protection III Armor (35%):</strong></p>
+                    <ul><li>Should be: 85% reduction</li><li>Actually is: 67.5% reduction</li></ul></li>
+                    <li><strong>Potion Barrier (90%) + Iron Hide (50%):</strong></p>
+                    <ul><li>Should be: 95% reduction</li><li>Actually is: 90.9% reduction</li></ul></li>
+                    <li><strong>Protection (35%) + Iron Hide (50%):</strong></p>
+                    <ul><li>Protection value drops from 35% to 21.2%</li><li>Still worth using together</li></ul></li>
+                </ul>
+                <p><strong>Shinn's Conclusion:</strong> "Protection sucks because it gets devalued when stacked"</p>
+            </div>
+            
+            <div class="shin-data">
+                <h4>⚡ PAIN CYCLE DPS BOOSTS - BY WEAPON (Shinn Data)</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Weapon</th>
+                            <th>Pain Cycle Boost</th>
+                            <th>Optimal Usage</th>
+                            <th>Shinn Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fighter's Bindings</td>
+                            <td>379.7%</td>
+                            <td>Trigger on every hit</td>
+                            <td>Highest boost, but dangerous</td>
+                        </tr>
+                        <tr>
+                            <td>Mechanized Sawblade</td>
+                            <td>386.2%</td>
+                            <td>Start combo on 2nd hit</td>
+                            <td>Extreme boost with exploit</td>
+                        </tr>
+                        <tr>
+                            <td>Most Weapons</td>
+                            <td>66.67%</td>
+                            <td>Normal usage</td>
+                            <td>Standard boost over time</td>
+                        </tr>
+                        <tr>
+                            <td>Fast Combo Weapons</td>
+                            <td>103-112%</td>
+                            <td>Trigger on strongest hits</td>
+                            <td>Good balance of risk/reward</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Shinn Warning:</strong> "Don't use on fast weak hit weapons - Pain Cycle will tear you apart"</p>
+            </div>
+        </section>
+        
+        <!-- COMPLETE ANCIENTS SECTION -->
+        <section id="ancients" class="section shin-section">
+            <h2>👹 COMPLETE ANCIENT ENEMIES & LOOT - SHINN DATA</h2>
+            <p><strong>Source:</strong> Shinn's Ancient Loot Pool Analysis</p>
+            
+            <div class="shin-data">
+                <h4>📋 ALL ANCIENT BOSSES & THEIR EXCLUSIVE LOOT</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Ancient Name</th>
+                            <th>Base Enemy</th>
+                            <th>Exclusive Loot Drops</th>
+                            <th>Shinn Farm Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abominable Weaver</td>
+                            <td>Spider</td>
+                            <td>Double Axe, Wolf Armor, Battle Robe, Trick Bow</td>
+                            <td><span class="tier-B">B</span> - Decent early gear</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient Terror</td>
+                            <td>Wraith</td>
+                            <td>Exploding Crossbow, Mystery Armor, Champion's Armor</td>
+                            <td><span class="tier-A">A</span> - Good armor variety</td>
+                        </tr>
+                        <tr>
+                            <td>Barrage</td>
+                            <td>Skeleton</td>
+                            <td>Bow, Soul Bow, Hunter's Armor</td>
+                            <td><span class="tier-C">C</span> - Basic ranged gear</td>
+                        </tr>
+                        <tr>
+                            <td>Cursed Presence</td>
+                            <td>Vanguard</td>
+                            <td>Phantom Armor, Soul Crossbow, Cutlass</td>
+                            <td><span class="tier-A">A</span> - Soul build gear</td>
+                        </tr>
+                        <tr>
+                            <td>First Enchanter</td>
+                            <td>Enchanter</td>
+                            <td>Scale Mail, Claymore, Soul Scythe</td>
+                            <td><span class="tier-A">A</span> - Enchantment synergy</td>
+                        </tr>
+                        <tr>
+                            <td>Grim Guardian</td>
+                            <td>Zombie</td>
+                            <td>Sword, Grim Armor, Dark Armor</td>
+                            <td><span class="tier-B">B</span> - Tank gear options</td>
+                        </tr>
+                        <tr>
+                            <td>Haunted Caller</td>
+                            <td>Necromancer</td>
+                            <td>Longbow, Rapid Crossbow, Sickles, Spelunker Armor</td>
+                            <td><span class="tier-A">A</span> - Good variety</td>
+                        </tr>
+                        <tr>
+                            <td>Mooshroom Ancient</td>
+                            <td>Mooshroom</td>
+                            <td>Katana, Ghost Armor, Dual Crossbows, Gauntlets</td>
+                            <td><span class="tier-A">A</span> - Speed gear</td>
+                        </tr>
+                        <tr>
+                            <td>Oozing Menace</td>
+                            <td>Slime</td>
+                            <td>Battlestaff, Shortbow, Mercenary Armor</td>
+                            <td><span class="tier-C">C</span> - Basic gear</td>
+                        </tr>
+                        <tr>
+                            <td>Pestilent Conjurer</td>
+                            <td>Witch</td>
+                            <td>Spear, Glaive, Heavy Crossbow, Scatter Crossbow</td>
+                            <td><span class="tier-B">B</span> - Decent ranged options</td>
+                        </tr>
+                        <tr>
+                            <td>Solemn Giant</td>
+                            <td>Pillager</td>
+                            <td>Burst Crossbow, Rapier, Guard's Armor</td>
+                            <td><span class="tier-B">B</span> - Solid choices</td>
+                        </tr>
+                        <tr>
+                            <td>The Seeking Flame</td>
+                            <td>Vex</td>
+                            <td>Axe, Soul Knife, Evocation Robe</td>
+                            <td><span class="tier-A">A</span> - Artifact build gear</td>
+                        </tr>
+                        <tr>
+                            <td>The Tiny Scourge</td>
+                            <td>Baby Zombie</td>
+                            <td>Daggers, Soul Robe, Thief Armor</td>
+                            <td><span class="tier-B">B</span> - Speed/dagger build</td>
+                        </tr>
+                        <tr>
+                            <td>The Tower</td>
+                            <td>Chicken Jockey Tower</td>
+                            <td>Hunting Bow, Beenest Armor, Pickaxe</td>
+                            <td><span class="tier-C">C</span> - Niche gear</td>
+                        </tr>
+                        <tr>
+                            <td>Unbreakable One</td>
+                            <td>Redstone Golem</td>
+                            <td>Hammer, Claymore, Power Bow, Full Plate Armor</td>
+                            <td><span class="tier-S">S</span> - Heavy damage gear</td>
+                        </tr>
+                        <tr>
+                            <td>Vigilant Scoundrel</td>
+                            <td>Royal Guard</td>
+                            <td>Crossbow, Mace, Reinforced Mail</td>
+                            <td><span class="tier-A">A</span> - Good defensive gear</td>
+                        </tr>
+                        <tr>
+                            <td>Thundering Growth</td>
+                            <td>Leapleaf</td>
+                            <td>Ocelot Armor, Whip, Root Rot Armor</td>
+                            <td><span class="tier-B">B</span> - Jungle DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Frost Warden</td>
+                            <td>Geomancer</td>
+                            <td>Snow Armor, Snow Bow</td>
+                            <td><span class="tier-C">C</span> - Winter DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Windbeard</td>
+                            <td>Goat</td>
+                            <td>Tempest Knife, Wind Bow, Climbing Gear, Emerald Armor</td>
+                            <td><span class="tier-A">A</span> - Wind themed gear</td>
+                        </tr>
+                        <tr>
+                            <td>The Unending</td>
+                            <td>Spawner</td>
+                            <td>Twisting Vines Bow, Boneclub, Piglin Armor</td>
+                            <td><span class="tier-B">B</span> - Nether DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Unstoppable Tusk</td>
+                            <td>Hoglin</td>
+                            <td>Chainsword, Cog Crossbow, Sprout Armor</td>
+                            <td><span class="tier-B">B</span> - Nether DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Abyssal Eye</td>
+                            <td>Guardian</td>
+                            <td>Squid Armor, Coral Blade, Harpoon Crossbow</td>
+                            <td><span class="tier-A">A</span> - Ocean DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Vengeful Mariner</td>
+                            <td>Drowned</td>
+                            <td>Anchor, Turtle Armor, Bubble Bow</td>
+                            <td><span class="tier-A">A</span> - Ocean DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Scuttling Torment</td>
+                            <td>Silverfish</td>
+                            <td>Void Bow, Obsidian Claymore, End Robes</td>
+                            <td><span class="tier-S">S</span> - End DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>The Swarm</td>
+                            <td>Snareling</td>
+                            <td>Backstabber, Shulker Armor, Shadow Crossbow</td>
+                            <td><span class="tier-A">A</span> - End DLC gear</td>
+                        </tr>
+                        <tr>
+                            <td>Watcher of the End</td>
+                            <td>Watchling</td>
+                            <td>Void Touched Blade, Shadow Crossbow, Entertainer's Garb</td>
+                            <td><span class="tier-S">S+</span> - Best End gear</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Shinn Farm Priority:</strong> Watcher of the End > Unbreakable One > Scuttling Torment > The Seeking Flame</p>
+            </div>
+        </section>
+        
+        <!-- DPS RANKINGS SECTION -->
+        <section id="dps" class="section shin-section">
+            <h2>📊 COMPLETE DPS RANKINGS - SHINN'S 2023 DATA</h2>
+            <p><strong>Source:</strong> Shinn's Complete Weapon DPS Analysis (251 Power, 225% Attack Speed)</p>
+            
+            <div class="shin-data">
+                <h4>🏆 TOP 30 WEAPONS - COMPLETE RANKING</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Weapon Name</th>
+                            <th>Category</th>
+                            <th>DPS Value</th>
+                            <th>Rarity</th>
+                            <th>Shinn Analysis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Broken Sawblade</td>
+                            <td>Sawblade</td>
+                            <td>3,618,481</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Highest DPS but requires exploit usage</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mechanized Sawblade</td>
+                            <td>Sawblade</td>
+                            <td>3,499,851</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Second highest, normal usage</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sponge Striker</td>
+                            <td>Sword</td>
+                            <td>3,430,300</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Exploit fixed, still excellent</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Anchor</td>
+                            <td>Hammer</td>
+                            <td>3,416,093</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Encrusted Anchor variant</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Starless Night</td>
+                            <td>Sword</td>
+                            <td>3,308,839</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Void damage, high base</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grave Bane</td>
+                            <td>Glaive</td>
+                            <td>3,275,795</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Undead bonus damage</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Whirlwind</td>
+                            <td>Axe</td>
+                            <td>3,211,298</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Spin attack, area damage</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Dark Katana</td>
+                            <td>Sword</td>
+                            <td>3,177,783</td>
+                            <td><span class="rarity-rare">Rare</span></td>
+                            <td>Extra damage to undead</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Truthseeker</td>
+                            <td>Sword</td>
+                            <td>3,168,962</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>High base damage</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Void Touch</td>
+                            <td>Sword</td>
+                            <td>3,167,043</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Void damage variant</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Heartstealer</td>
+                            <td>Axe</td>
+                            <td>3,114,133</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Life steal mechanic</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Flail</td>
+                            <td>Flail</td>
+                            <td>3,113,365</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Chain weapon, extended reach</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Stormlander</td>
+                            <td>Hammer</td>
+                            <td>3,094,051</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Lightning damage</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Highland Axe</td>
+                            <td>Axe</td>
+                            <td>3,086,508</td>
+                            <td><span class="rarity-rare">Rare</span></td>
+                            <td>Stunning strikes</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Cursed Axe</td>
+                            <td>Axe</td>
+                            <td>3,070,091</td>
+                            <td><span class="rarity-rare">Rare</span></td>
+                            <td>Exploding mobs</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Firebrand</td>
+                            <td>Axe</td>
+                            <td>3,066,734</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Fire damage over time</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Double Axe</td>
+                            <td>Axe</td>
+                            <td>3,039,107</td>
+                            <td><span class="rarity-uncommon">Uncommon</span></td>
+                            <td>Spin attack hits twice</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Venom Glaive</td>
+                            <td>Glaive</td>
+                            <td>3,016,233</td>
+                            <td><span class="rarity-epic">Epic</span></td>
+                            <td>Poison damage over time</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Eternal Knife</td>
+                            <td>Dagger</td>
+                            <td>2,938,910</td>
+                            <td><span class="rarity-legendary">Legendary</span></td>
+                            <td>Soul gathering, speed</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Backstabber</td>
+                            <td>Dagger</td>
+                            <td>2,885,214</td>
+                            <td><span class="rarity-rare">Rare</span></td>
+                            <td>Backstab damage bonus</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mechanics-box">
+                <h4>📈 ENCHANTMENT DPS BOOSTS - SHINN'S CALCULATIONS</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Enchantment</th>
+                            <th>DPS Boost Range</th>
+                            <th>Best Weapon Types</th>
+                            <th>Shinn Analysis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pain Cycle</td>
+                            <td>66.67% - 386.2%</td>
+                            <td>Slow weapons with strong final hits</td>
+                            <td>Highest potential but dangerous to use</td>
+                        </tr>
+                        <tr>
+                            <td>Thundering</td>
+                            <td>-65.9% to +115.3%</td>
+                            <td>High damage per hit weapons</td>
+                            <td>Only good with Lightning Focus</td>
+                        </tr>
+                        <tr>
+                            <td>Committed</td>
+                            <td>+40% average</td>
+                            <td>All weapons</td>
+                            <td>Reliable, consistent boost</td>
+                        </tr>
+                        <tr>
+                            <td>Critical Hit</td>
+                            <td>+40% average (30% chance of 3x)</td>
+                            <td>All weapons</td>
+                            <td>Best overall enchantment</td>
+                        </tr>
+                        <tr>
+                            <td>Sharpness</td>
+                            <td>+30% at level III</td>
+                            <td>All weapons</td>
+                            <td>Reliable flat damage increase</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="shin-data">
+                <h4>🏥 HEALING ENCHANTMENT COMPARISON - SHINN'S RATIO ANALYSIS</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Damage Threshold</th>
+                            <th>Leeching:Radiance Ratio</th>
+                            <th>Better Enchant</th>
+                            <th>Shinn Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>271,113+ damage</td>
+                            <td>18.51:1</td>
+                            <td>Leeching</td>
+                            <td>Leeching vastly superior at high damage</td>
+                        </tr>
+                        <tr>
+                            <td>920,207 damage</td>
+                            <td>5.6:1</td>
+                            <td>Leeching</td>
+                            <td>Leeching still much better</td>
+                        </tr>
+                        <tr>
+                            <td>1,000,000 damage</td>
+                            <td>5.1:1</td>
+                            <td>Leeching</td>
+                            <td>Leeching maintains advantage</td>
+                        </tr>
+                        <tr>
+                            <td>2,000,000+ damage</td>
+                            <td>2.5:1</td>
+                            <td>Leeching</td>
+                            <td>Leeching still better but closer</td>
+                        </tr>
+                        <tr>
+                            <td>Below 500,000</td>
+                            <td>1:1 or worse</td>
+                            <td>Radiance</td>
+                            <td>Radiance better for low damage builds</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Shinn's Conclusion:</strong> "Leeching is better for high damage builds, Radiance for low damage/survival builds"</p>
+            </div>
+        </section>
+        
+        <!-- META BUILDS SECTION -->
+        <section id="builds" class="section shin-section">
+            <h2>🏗️ SHINN'S META BUILD COLLECTION</h2>
+            <p><strong>Source:</strong> Shinn's Personal Build Guides & Community Meta</p>
+            
+            <div class="shin-data">
+                <h4>🏆 SOUL BUILD - SHINN'S SIGNATURE (S+ TIER)</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Slot</th>
+                            <th>Item</th>
+                            <th>Enchantments</th>
+                            <th>Shinn Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Weapon</td>
+                            <td>Eternal Knife</td>
+                            <td>Soul Siphon III, Critical Hit III, Radiance III</td>
+                            <td>+100% soul gathering, best soul weapon</td>
+                        </tr>
+                        <tr>
+                            <td>Armor</td>
+                            <td>Wither Armor</td>
+                            <td>Protection III, Potion Barrier III, Cool Down III</td>
+                            <td>+100% soul gathering, +40% health</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 1</td>
+                            <td>Corrupted Beacon</td>
+                            <td>N/A</td>
+                            <td>500 DPS beam, costs souls</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 2</td>
+                            <td>Torment Quiver</td>
+                            <td>N/A</td>
+                            <td>Piercing arrows, soul synergy</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 3</td>
+                            <td>Soul Healer</td>
+                            <td>N/A</td>
+                            <td>Emergency healing, costs souls</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>DPS Output:</strong> 6,096,380 DPS (Corrupted Beacon with soul buffs)</p>
+                <p><strong>Strategy:</strong> Generate souls → spam Corrupted Beacon → sustain with Radiance</p>
+            </div>
+            
+            <div class="mechanics-box">
+                <h4>⚡ SPEED BUILD - FASTEST CLEARS</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Slot</th>
+                            <th>Item</th>
+                            <th>Reason</th>
+                            <th>Shinn Analysis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Weapon</td>
+                            <td>Fighter's Bindings</td>
+                            <td>3.8 attack speed, fastest in game</td>
+                            <td>Best for speedruns and DPS</td>
+                        </tr>
+                        <tr>
+                            <td>Armor</td>
+                            <td>Evocation Robe</td>
+                            <td>+50% roll speed, -25% artifact cooldown</td>
+                            <td>Perfect mobility synergy</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 1</td>
+                            <td>Death Cap Mushroom</td>
+                            <td>+100% attack speed, +50% move speed</td>
+                            <td>Mandatory for speed</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 2</td>
+                            <td>Light Feather</td>
+                            <td>Roll stuns enemies, 3s cooldown</td>
+                            <td>Core of rolling builds</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact 3</td>
+                            <td>Boots of Swiftness</td>
+                            <td>+50% move speed for 3s</td>
+                            <td>Additional mobility</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Speed Multiplier:</strong> 400%+ total speed with all buffs active</p>
+                <p><strong>Strategy:</strong> Never stop moving, roll through everything</p>
+            </div>
+            
+            <div class="shin-data">
+                <h4>🎯 ROLLING BUILD - ADVANCED TECHNIQUE</h4>
+                <p><strong>Core Concept:</strong> Burstbowstring + Cooldown Shot + Light Feather</p>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Item/Enchant</th>
+                            <th>Function</th>
+                            <th>Shinn Tech Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ranged Weapon</td>
+                            <td>Winter's Touch</td>
+                            <td>3 arrows per shot, slowing</td>
+                            <td>Shoots 9 arrows per roll (3×3)</td>
+                        </tr>
+                        <tr>
+                            <td>Key Enchant</td>
+                            <td>Burstbowstring</td>
+                            <td>Shoots on roll, 1 arrow per enemy</td>
+                            <td>Up to 3 arrows per roll</td>
+                        </tr>
+                        <tr>
+                            <td>Key Enchant</td>
+                            <td>Cooldown Shot</td>
+                            <td>-1.5s cooldown per charged shot</td>
+                            <td>-4.5s per roll with 3 enemies</td>
+                        </tr>
+                        <tr>
+                            <td>Artifact</td>
+                            <td>Light Feather</td>
+                            <td>3s cooldown, roll stuns</td>
+                            <td>Infinite roll loop possible</td>
+                        </tr>
+                        <tr>
+                            <td>Ammo Source</td>
+                            <td>Infinity or Looting</td>
+                            <td>Maintain arrow supply</td>
+                            <td>Essential for sustained use</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Advanced Tech:</strong> With 3+ enemies, achieve infinite roll loop</p>
+                <p><strong>Jungle Poison Synergy:</strong> Transfer damage to poison with up to 600% multiplier</p>
+            </div>
+        </section>
+        
+        <!-- COMPLETE ENCHANTMENTS SECTION -->
+        <section id="enchantments" class="section shin-section">
+            <h2>✨ COMPLETE ENCHANTMENT GUIDE - SHINN ANALYZED</h2>
+            <p><strong>Source:</strong> Shinn's Complete Enchantment Tier List & Ratio Analysis</p>
+            
+            <div class="shin-data">
+                <h4>🏆 S+ TIER ENCHANTMENTS - MUST HAVE</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Enchantment</th>
+                            <th>Max Level</th>
+                            <th>Effect at Max</th>
+                            <th>Shinn Ratio Analysis</th>
+                            <th>Best Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Critical Hit</td>
+                            <td>III</td>
+                            <td>30% chance for 3x damage</td>
+                            <td>+40% average DPS</td>
+                            <td>Every weapon, every build</td>
+                        </tr>
+                        <tr>
+                            <td>Radiance</td>
+                            <td>III</td>
+                            <td>60% chance to heal 15% HP</td>
+                            <td>Better than Leeching below 500k damage</td>
+                            <td>Survival builds, low damage weapons</td>
+                        </tr>
+                        <tr>
+                            <td>Leeching</td>
+                            <td>III</td>
+                            <td>Heal 15% HP on kill</td>
+                            <td>18.5:1 ratio vs Radiance at high damage</td>
+                            <td>High damage weapons, soul builds</td>
+                        </tr>
+                        <tr>
+                            <td>Protection</td>
+                            <td>III</td>
+                            <td>-27% damage taken</td>
+                            <td>Universal damage reduction</td>
+                            <td>Every armor piece</td>
+                        </tr>
+                        <tr>
+                            <td>Potion Barrier</td>
+                            <td>III</td>
+                            <td>90% damage reduction for 15s</td>
+                            <td>Best survival enchant</td>
+                            <td>All armor, boss fights</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mechanics-box">
+                <h4>⚔️ WEAPON ENCHANTMENTS - COMPLETE TIER LIST</h4>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>Enchantment</th>
+                            <th>Tier</th>
+                            <th>DPS Boost</th>
+                            <th>Shinn Analysis</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Critical Hit</td>
+                            <td><span class="tier-S">S+</span></td>
+                            <td>+40% average</td>
+                            <td>Best overall enchantment</td>
+                            <td>Use on everything</td>
+                        </tr>
+                        <tr>
+                            <td>Committed</td>
+                            <td><span class="tier-S">S</span></td>
+                            <td>+40% average</td>
+                            <td>Reliable, consistent</td>
+                            <td>Great for boss fights</td>
+                        </tr>
+                        <tr>
+                            <td>Leeching</td>
+                            <td><span class="tier-S">S</span></td>
+                            <td>Scaling healing</td>
+                            <td>Better than Radiance at high damage</td>
+                            <td>18:1 ratio at 271k+ damage</td>
+                        </tr>
+                        <tr>
+                            <td>Sharpness</td>
+                            <td><span class="tier-A">A</span></td>
+                            <td>+30% at III</td>
+                            <td>Reliable flat increase</td>
+                            <td>Always solid choice</td>
+                        </tr>
+                        <tr>
+                            <td>Weakening</td>
+                            <td><span class="tier-A">A</span></td>
+                            <td>Enemy deals -50% damage</td>
+                            <td>Great utility</td>
+                            <td>Survival + damage</td>
+                        </tr>
+                        <tr>
+                            <td>Sharp Shot</td>
+                            <td><span class="tier-A">A</span></td>
+                            <td>+30% arrow damage</td>
+                            <td>Essential for bows</td>
+                            <td>Ranged only</td>
+                        </tr>
+                        <tr>
+                            <td>Power</td>
+                            <td><span class="tier-A">A</span></td>
+                            <td>+30% ranged damage</td>
+                            <td>Bow essential</td>
+                            <td>Ranged only</td>
+                        </tr>
+                        <tr>
+                            <td>Multishot</td>
+                            <td><span class="tier-A">A</span></td>
+                            <td>40% chance for 5 arrows</td>
+                            <td>Amazing with Winter's Touch</td>
+                            <td>Meta for soul builds</td>
+                        </tr>
+                        <tr>
+                            <td>Pain Cycle</td>
+                            <td><span class="tier-B">B</span></td>
+                            <td>66.67% - 386%</td>
+                            <td>High risk, high reward</td>
+                            <td>Dangerous but powerful</td>
+                        </tr>
+                        <tr>
+                            <td>Thundering</td>
+                            <td><span class="tier-B">B</span></td>
+                            <td>-65% to +115%</td>
+                            <td>Only good with Lightning Focus</td>
+                            <td>Situational</td>
+                        </tr>
+                        <tr>
+                            <td>Fire Aspect</td>
+                            <td><span class="tier-B">B</span></td>
+                            <td>+6 fire damage/sec</td>
+                            <td>Blocks on-kill effects</td>
+                            <td>Use carefully</td>
+                        </tr>
+                        <tr>
+                            <td>Poison Cloud</td>
+                            <td><span class="tier-B">B</span></td>
+                            <td>Area poison damage</td>
+                            <td>Good for crowds</td>
+                            <td>Blocks on-kill effects</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2025 DUNGEONS BIBLE ULTIMATE - The Complete Minecraft Dungeons Encyclopedia</p>
-        <p>Enhanced with expert strategies from Shinn and the Minecraft Dungeons community</p>
+        <p>&copy; 2025 DUNGEONS BIBLE ULTIMATE - Complete Shinn-Accurate Encyclopedia</p>
+        <p>Based on Shinn's exact DPS calculations, damage mechanics, and meta analysis</p>
         <p>Minecraft Dungeons is developed by Mojang Studios and Double Eleven</p>
-        <p>This is a comprehensive fan-made wiki and is not affiliated with Mojang Studios</p>
-        <p><strong>Version:</strong> Ultimate Edition | <strong>Last Updated:</strong> December 2025</p>
+        <p>This is a comprehensive fan-made wiki incorporating Shinn's technical data</p>
+        <p><strong>Data Source:</strong> Shinn's 2023 DPS Rankings & Mechanics Analysis</p>
     </footer>
 </body>
 </html>
+</html>
+
