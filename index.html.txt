@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons Bible - Complete Minecraft Dungeons Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid #8b4513;
+        }
+        
+        h1 {
+            color: #ff6b35;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #ffa500;
+            font-size: 1.2rem;
+        }
+        
+        nav {
+            background: #2a2a2a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+        
+        .nav-item {
+            background: #3a3a3a;
+            color: #ffa500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .nav-item:hover {
+            background: #4a4a4a;
+            border-color: #ff6b35;
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .section {
+            background: #2a2a2a;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            color: #ff6b35;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #8b4513;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #ffa500;
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        h4 {
+            color: #ffb366;
+            font-size: 1.3rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .card {
+            background: #3a3a3a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .item-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #3a3a3a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .item-table th {
+            background: #4a4a4a;
+            color: #ffa500;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .item-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #4a4a4a;
+        }
+        
+        .item-table tr:hover {
+            background: #4a4a4a;
+        }
+        
+        .rarity-common { color: #ffffff; }
+        .rarity-uncommon { color: #1eff00; }
+        .rarity-rare { color: #0070dd; }
+        .rarity-epic { color: #a335ee; }
+        .rarity-legendary { color: #ff8000; }
+        
+        .tier-S { color: #ff6b35; font-weight: bold; }
+        .tier-A { color: #ffa500; font-weight: bold; }
+        .tier-B { color: #ffd700; font-weight: bold; }
+        .tier-C { color: #90ee90; }
+        .tier-D { color: #87ceeb; }
+        
+        .community-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .community-link {
+            background: #4a4a4a;
+            color: #ffa500;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .community-link:hover {
+            background: #5a5a5a;
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
+        
+        .boss-card {
+            background: linear-gradient(135deg, #4a0e4e 0%, #2a0a2e 100%);
+            border: 2px solid #8b008b;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+        
+        .dlc-section {
+            background: linear-gradient(135deg, #0d4f33 0%, #052815 100%);
+            border: 2px solid #00ff7f;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+        
+        .tip-box {
+            background: #3a3a3a;
+            border-left: 4px solid #00ff7f;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            background: #1a0f08;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid #8b4513;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2rem; }
+            .nav-container { flex-direction: column; align-items: center; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏛️ DUNGEONS BIBLE 📜</h1>
+        <p class="subtitle">The Complete Minecraft Dungeons Encyclopedia</p>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#weapons" class="nav-item">⚔️ Weapons</a>
+            <a href="#armor" class="nav-item">🛡️ Armor</a>
+            <a href="#artifacts" class="nav-item">🔮 Artifacts</a>
+            <a href="#enchantments" class="nav-item">✨ Enchantments</a>
+            <a href="#missions" class="nav-item">🗺️ Missions</a>
+            <a href="#enemies" class="nav-item">👹 Enemies</a>
+            <a href="#bosses" class="nav-item">👑 Bosses</a>
+            <a href="#dlc" class="nav-item">📦 DLC Content</a>
+            <a href="#guides" class="nav-item">📚 Guides</a>
+            <a href="#community" class="nav-item">🌐 Community</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- Weapons Section -->
+        <section id="weapons" class="section">
+            <h2>⚔️ Weapons</h2>
+            
+            <h3>Melee Weapons</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Swords</h4>
+                    <ul>
+                        <li><span class="rarity-common">Broad Sword</span> - Balanced damage and speed</li>
+                        <li><span class="rarity-uncommon">Diamond Sword</span> - Higher damage, reliable</li>
+                        <li><span class="rarity-rare">Hawkbrand</span> - Critical hit chance</li>
+                        <li><span class="rarity-epic">Frost Slayer</span> - Freezing effect</li>
+                        <li><span class="rarity-legendary">Nameless Blade</span> - Soul gathering</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Axes</h4>
+                    <ul>
+                        <li><span class="rarity-common">Battle Axe</span> - High damage, slow speed</li>
+                        <li><span class="rarity-uncommon">Double Axe</span> - Spin attack combo</li>
+                        <li><span class="rarity-rare">Cursed Axe</span> - Exploding mobs</li>
+                        <li><span class="rarity-epic">Whirlwind</span> - Spin attack mastery</li>
+                        <li><span class="rarity-legendary">Firebrand</span> - Fire damage</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Other Melee</h4>
+                    <ul>
+                        <li><span class="rarity-uncommon">Glaive</span> - Long reach</li>
+                        <li><span class="rarity-rare">Grave Bane</span> - Extra damage to undead</li>
+                        <li><span class="rarity-epic">Venom Glaive</span> - Poison damage</li>
+                        <li><span class="rarity-legendary">Imploding Crossbow</span> - Explosive bolts</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Ranged Weapons</h3>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Weapon</th>
+                        <th>Type</th>
+                        <th>Special Effect</th>
+                        <th>Rarity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bow</td>
+                        <td>Bow</td>
+                        <td>Standard ranged weapon</td>
+                        <td><span class="rarity-common">Common</span></td>
+                    </tr>
+                    <tr>
+                        <td>Doom Crossbow</td>
+                        <td>Crossbow</td>
+                        <td>High damage, slow fire rate</td>
+                        <td><span class="rarity-rare">Rare</span></td>
+                    </tr>
+                    <tr>
+                        <td>Elite Power Bow</td>
+                        <td>Bow</td>
+                        <td>Charged shots deal more damage</td>
+                        <td><span class="rarity-epic">Epic</span></td>
+                    </tr>
+                    <tr>
+                        <td>Bow of Lost Souls</td>
+                        <td>Bow</td>
+                        <td>Soul gathering, chance for multishot</td>
+                        <td><span class="rarity-legendary">Legendary</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Armor Section -->
+        <section id="armor" class="section">
+            <h2>🛡️ Armor</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Light Armor</h4>
+                    <ul>
+                        <li><span class="rarity-common">Hunter's Armor</span> - Arrow damage bonus</li>
+                        <li><span class="rarity-uncommon">Wolf Armor</span> - Health potions heal allies</li>
+                        <li><span class="rarity-rare">Black Wolf Armor</span> - Enhanced wolf armor</li>
+                        <li><span class="rarity-epic">Archer's Armor</span> - Ranged damage focus</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Medium Armor</h4>
+                    <ul>
+                        <li><span class="rarity-common">Battle Robe</span> - Artifact cooldown reduction</li>
+                        <li><span class="rarity-uncommon">Splendid Robe</span> - Enhanced battle robe</li>
+                        <li><span class="rarity-rare">Evocation Robe</span> - Speed boost after rolling</li>
+                        <li><span class="rarity-epic">Ember Robe</span> - Burns nearby enemies</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Heavy Armor</h4>
+                    <ul>
+                        <li><span class="rarity-common">Mercenary Armor</span> - Damage reduction</li>
+                        <li><span class="rarity-uncommon">Reinforced Mail</span> - High protection</li>
+                        <li><span class="rarity-rare">Stalwart Armor</span> - Potion use boosts defense</li>
+                        <li><span class="rarity-epic">Grim Armor</span> - Soul gathering bonus</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Artifacts Section -->
+        <section id="artifacts" class="section">
+            <h2>🔮 Artifacts</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Artifact</th>
+                        <th>Type</th>
+                        <th>Effect</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Death Cap Mushroom</td>
+                        <td>Attack</td>
+                        <td>Greatly increases attack and movement speed</td>
+                        <td>30 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Iron Hide Amulet</td>
+                        <td>Defense</td>
+                        <td>Provides major damage reduction</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Light Feather</td>
+                        <td>Utility</td>
+                        <td>Stuns and knocks back enemies when rolling</td>
+                        <td>3 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Wonderful Wheat</td>
+                        <td>Summon</td>
+                        <td>Summons a llama to aid in battle</td>
+                        <td>30 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Corrupted Beacon</td>
+                        <td>Soul</td>
+                        <td>Fires a high-damage beam, costs souls</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Enchantments Section -->
+        <section id="enchantments" class="section">
+            <h2>✨ Enchantments</h2>
+            
+            <h3>Weapon Enchantments</h3>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Enchantment</th>
+                        <th>Effect</th>
+                        <th>Tier Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Critical Hit</td>
+                        <td>Chance to deal 3x damage</td>
+                        <td><span class="tier-S">S</span></td>
+                    </tr>
+                    <tr>
+                        <td>Leeching</td>
+                        <td>Defeating mobs heals you</td>
+                        <td><span class="tier-A">A</span></td>
+                    </tr>
+                    <tr>
+                        <td>Radiance</td>
+                        <td>Chance to create healing area</td>
+                        <td><span class="tier-S">S</span></td>
+                    </tr>
+                    <tr>
+                        <td>Sharpness</td>
+                        <td>Increases weapon damage</td>
+                        <td><span class="tier-A">A</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fire Aspect</td>
+                        <td>Sets enemies on fire</td>
+                        <td><span class="tier-B">B</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Armor Enchantments</h3>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Enchantment</th>
+                        <th>Effect</th>
+                        <th>Tier Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Protection</td>
+                        <td>Reduces all damage taken</td>
+                        <td><span class="tier-S">S</span></td>
+                    </tr>
+                    <tr>
+                        <td>Potion Barrier</td>
+                        <td>Using potion grants 90% damage reduction</td>
+                        <td><span class="tier-S">S</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cool Down</td>
+                        <td>Reduces artifact cooldown</td>
+                        <td><span class="tier-A">A</span></td>
+                    </tr>
+                    <tr>
+                        <td>Deflect</td>
+                        <td>Chance to deflect projectiles</td>
+                        <td><span class="tier-B">B</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Missions Section -->
+        <section id="missions" class="section">
+            <h2>🗺️ Missions</h2>
+            
+            <h3>Main Story Missions</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>1. Squid Coast</h4>
+                    <p><strong>Difficulty:</strong> Tutorial</p>
+                    <p><strong>Description:</strong> Learn the basics of combat and movement</p>
+                    <p><strong>Secrets:</strong> 0</p>
+                </div>
+                <div class="card">
+                    <h4>2. Creeper Woods</h4>
+                    <p><strong>Difficulty:</strong> Easy</p>
+                    <p><strong>Description:</strong> Rescue captured villagers</p>
+                    <p><strong>Secrets:</strong> Creepy Crypt (secret level)</p>
+                </div>
+                <div class="card">
+                    <h4>3. Pumpkin Pastures</h4>
+                    <p><strong>Difficulty:</strong> Easy</p>
+                    <p><strong>Description:</strong> Defend the last village from attack</p>
+                    <p><strong>Secrets:</strong> Arch Haven (secret level)</p>
+                </div>
+                <div class="card">
+                    <h4>4. Soggy Swamp</h4>
+                    <p><strong>Difficulty:</strong> Medium</p>
+                    <p><strong>Description:</strong> Destroy the corrupted cauldrons</p>
+                    <p><strong>Secrets:</strong> Soggy Cave (secret level)</p>
+                </div>
+                <div class="card">
+                    <h4>5. Cacti Canyon</h4>
+                    <p><strong>Difficulty:</strong> Medium</p>
+                    <p><strong>Description:</strong> Navigate through canyon to reach Desert Temple</p>
+                    <p><strong>Secrets:</strong> None</p>
+                </div>
+                <div class="card">
+                    <h4>6. Redstone Mines</h4>
+                    <p><strong>Difficulty:</strong> Medium</p>
+                    <p><strong>Description:</strong> Free villagers from forced labor</p>
+                    <p><strong>Secrets:</strong> None</p>
+                </div>
+                <div class="card">
+                    <h4>7. Desert Temple</h4>
+                    <p><strong>Difficulty:</strong> Hard</p>
+                    <p><strong>Description:</strong> Stop the Arch-Illager from obtaining ancient secrets</p>
+                    <p><strong>Secrets:</strong> Lower Temple (secret level)</p>
+                </div>
+                <div class="card">
+                    <h4>8. Fiery Forge</h4>
+                    <p><strong>Difficulty:</strong> Hard</p>
+                    <p><strong>Description:</strong> Sabotage the Arch-Illager's weapon production</p>
+                    <p><strong>Secrets:</strong> None</p>
+                </div>
+                <div class="card">
+                    <h4>9. Highblock Halls</h4>
+                    <p><strong>Difficulty:</strong> Very Hard</p>
+                    <p><strong>Description:</strong> Infiltrate the Arch-Illager's castle</p>
+                    <p><strong>Secrets:</strong> Underhalls (secret level)</p>
+                </div>
+                <div class="card">
+                    <h4>10. Obsidian Pinnacle</h4>
+                    <p><strong>Difficulty:</strong> Very Hard</p>
+                    <p><strong>Description:</strong> Final confrontation with the Arch-Illager</p>
+                    <p><strong>Secrets:</strong> None</p>
+                </div>
+            </div>
+            
+            <h3>Secret Missions</h3>
+            <div class="tip-box">
+                <strong>💡 Tip:</strong> Secret missions are unlocked by finding hidden scrolls in their parent levels. Each secret level offers unique rewards and challenges!
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>??. Secret Cow Level</h4>
+                    <p><strong>Access:</strong> Collect all 10 runes hidden in main missions</p>
+                    <p><strong>Description:</strong> Battle hordes of hostile cows in this easter egg level</p>
+                    <p><strong>Rewards:</strong> Unique cow-themed gear</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Enemies Section -->
+        <section id="enemies" class="section">
+            <h2>👹 Enemies</h2>
+            
+            <h3>Enemy Categories</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Common Enemies</h4>
+                    <ul>
+                        <li><strong>Zombie:</strong> Basic melee attacker</li>
+                        <li><strong>Skeleton:</strong> Ranged archer</li>
+                        <li><strong>Creeper:</strong> Explodes when close</li>
+                        <li><strong>Spider:</strong> Shoots webs to immobilize</li>
+                        <li><strong>Husk:</strong> Stronger zombie variant</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Illagers</h4>
+                    <ul>
+                        <li><strong>Vindicator:</strong> Fast melee with axe</li>
+                        <li><strong>Pillager:</strong> Ranged crossbow user</li>
+                        <li><strong>Enchanter:</strong> Buffs nearby enemies</li>
+                        <li><strong>Geomancer:</strong> Creates stone walls and traps</li>
+                        <li><strong>Royal Guard:</strong> Heavy armor and mace</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Special Enemies</h4>
+                    <ul>
+                        <li><strong>Wraith:</strong> Teleports and summons fire</li>
+                        <li><strong>Necromancer:</strong> Summons undead minions</li>
+                        <li><strong>Redstone Golem:</strong> Powerful construct</li>
+                        <li><strong>Evoker:</strong> Summons vex minions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bosses Section -->
+        <section id="bosses" class="section">
+            <h2>👑 Bosses</h2>
+            
+            <div class="boss-card">
+                <h3>🌙 Corrupted Cauldron</h3>
+                <p><strong>Location:</strong> Soggy Swamp</p>
+                <p><strong>Attack Pattern:</strong> Summons conjured slimes, shoots purple projectiles</p>
+                <p><strong>Strategy:</strong> Focus on destroying summoned slimes first, dodge projectiles</p>
+                <p><strong>Drops:</strong> Powerful armor and artifacts</p>
+            </div>
+            
+            <div class="boss-card">
+                <h3>💀 Nameless One</h3>
+                <p><strong>Location:</strong> Desert Temple</p>
+                <p><strong>Attack Pattern:</strong> Summons skeleton vanguards, creates shadow clones</p>
+                <p><strong>Strategy:</strong> Attack real boss during clone vulnerability windows</p>
+                <p><strong>Drops:</strong> Unique necromancer-themed gear</p>
+            </div>
+            
+            <div class="boss-card">
+                <h3>🔥 Redstone Monstrosity</h3>
+                <p><strong>Location:</strong> Redstone Mines</p>
+                <p><strong>Attack Pattern:</strong> Summons redstone cubes, fire projectiles, melee attacks</p>
+                <p><strong>Strategy:</strong> Keep moving, prioritize destroying summoned cubes</p>
+                <p><strong>Drops:</strong> Redstone-powered weapons and armor</p>
+            </div>
+            
+            <div class="boss-card">
+                <h3>⚡ Heart of Ender</h3>
+                <p><strong>Location:</strong> Obsidian Pinnacle</p>
+                <p><strong>Attack Pattern:</strong> Multiple phases with different attacks</p>
+                <p><strong>Strategy:</strong> Learn attack patterns, use pillars for cover</p>
+                <p><strong>Drops:</strong> End-game legendary equipment</p>
+            </div>
+            
+            <div class="boss-card">
+                <h3>👑 Arch-Illager</h3>
+                <p><strong>Location:</strong> Obsidian Pinnacle (Final Boss)</p>
+                <p><strong>Attack Pattern:</strong> Three phases with increasing power</p>
+                <p><strong>Strategy:</strong> Manage adds, dodge energy orbs, attack during vulnerability</p>
+                <p><strong>Drops:</strong> Completion of main story</p>
+            </div>
+        </section>
+        
+        <!-- DLC Section -->
+        <section id="dlc" class="section">
+            <h2>📦 DLC Content</h2>
+            
+            <div class="dlc-section">
+                <h3>🌴 Jungle Awakens</h3>
+                <p><strong>New Missions:</strong> Dingy Jungle, Overgrown Temple, Panda Plateau</p>
+                <p><strong>New Boss:</strong> Jungle Abomination</p>
+                <p><strong>New Enemies:</strong> Leapleaf, Whisperer, Poison Quill, Ocelot</p>
+                <p><strong>Unique Gear:</strong> Vine Whip, Pandas Armor, Ocelot Armor</p>
+            </div>
+            
+            <div class="dlc-section">
+                <h3>❄️ Creeping Winter</h3>
+                <p><strong>New Missions:</strong> Frosted Fjord, Lone Fortress, Lost Settlement</p>
+                <p><strong>New Boss:</strong> Wretched Wraith</p>
+                <p><strong>New Enemies:</strong> Frozen Zombie, Iceologer, Stray</p>
+                <p><strong>Unique Gear:</strong> Frost Scythe, Winter's Touch, Arctic Fox Armor</p>
+            </div>
+            
+            <div class="dlc-section">
+                <h3>⛰️ Howling Peaks</h3>
+                <p><strong>New Missions:</strong> Windswept Peaks, Gale Sanctum, Colossal Rampart</p>
+                <p><strong>New Boss:</strong> Tempest Golem</p>
+                <p><strong>New Enemies:</strong> Mountaineer, Ravager, Squall Golem</p>
+                <p><strong>Unique Gear:</strong> Wind Bow, Climbing Gear, Goat Gear</p>
+            </div>
+            
+            <div class="dlc-section">
+                <h3>🔥 Flames of the Nether</h3>
+                <p><strong>New Missions:</strong> Nether Wastes, Warped Forest, Crimson Forest, Soul Sand Valley</p>
+                <p><strong>New Boss:</strong> Wildfire</p>
+                <p><strong>New Enemies:</strong> Piglin, Hoglin, Blaze, Wither Skeleton</p>
+                <p><strong>Unique Gear:</strong> Piglin Armor, Hoglin Armor, Netherite Weapons</p>
+            </div>
+            
+            <div class="dlc-section">
+                <h3>🌊 Hidden Depths</h3>
+                <p><strong>New Missions:</strong> Coral Rise, Abyssal Monument, Radiant Ravine</p>
+                <p><strong>New Boss:</strong> Ancient Guardian</p>
+                <p><strong>New Enemies:</strong> Drowned, Guardian, Sunken Skeleton</p>
+                <p><strong>Unique Gear:</strong> Harpoon Crossbow, Drowned Armor, Guardian Armor</p>
+            </div>
+            
+            <div class="dlc-section">
+                <h3>🌀 Echoing Void</h3>
+                <p><strong>New Missions:</strong> End Wilds, Broken Citadel, Vengeful Heart</p>
+                <p><strong>New Boss:</strong> Vengeful Heart of Ender</p>
+                <p><strong>New Enemies:</strong> Endermite, Shulker, Snareling, Watchling</p>
+                <p><strong>Unique Gear:</strong> Void Touched Weapons, End Armor</p>
+            </div>
+        </section>
+        
+        <!-- Guides Section -->
+        <section id="guides" class="section">
+            <h2>📚 Guides</h2>
+            
+            <h3>Beginner's Guide</h3>
+            <div class="tip-box">
+                <h4>Getting Started</h4>
+                <ol>
+                    <li><strong>Choose Your Difficulty:</strong> Start on Default, progress to Adventure, then Apocalypse</li>
+                    <li><strong>Experiment with Builds:</strong> Try different weapon/armor/artifact combinations</li>
+                    <li><strong>Enchant Strategically:</strong> Save enchantment points for higher-level gear</li>
+                    <li><strong>Explore Thoroughly:</strong> Secrets and chests are hidden throughout levels</li>
+                    <li><strong>Play Co-op:</strong> Team up with friends for easier progression</li>
+                </ol>
+            </div>
+            
+            <h3>Advanced Strategies</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Speed Running</h4>
+                    <ul>
+                        <li>Use fast weapons and movement artifacts</li>
+                        <li>Skip optional fights when possible</li>
+                        <li>Memorize level layouts for optimal routing</li>
+                        <li>Use death cap mushroom for boss fights</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>High Level Farming</h4>
+                    <ul>
+                        <li>Farm Soggy Cave for emeralds and gear</li>
+                        <li>Complete daily trials for unique rewards</li>
+                        <li>Focus on Apocalypse+ for best drops</li>
+                        <li>Use Luck of the Sea enchantment</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Build Optimization</h4>
+                    <ul>
+                        <li>Balance damage, defense, and utility</li>
+                        <li>Consider synergy between enchantments</li>
+                        <li>Adapt builds to specific challenges</li>
+                        <li>Test different artifact combinations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Achievement Guide</h3>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Achievement</th>
+                        <th>Requirement</th>
+                        <th>Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Champion of the Overworld</td>
+                        <td>Defeat the Arch-Illager on Apocalypse difficulty</td>
+                        <td><span class="tier-S">Very Hard</span></td>
+                    </tr>
+                    <tr>
+                        <td>Passive Aggressive</td>
+                        <td>Defeat 50 passive mobs</td>
+                        <td><span class="tier-C">Easy</span></td>
+                    </tr>
+                    <tr>
+                        <td>Maxed Out and Geared Up</td>
+                        <td>Equip a full set of gear with all enchantments</td>
+                        <td><span class="tier-A">Hard</span></td>
+                    </tr>
+                    <tr>
+                        <td>High Treason</td>
+                        <td>Defeat the Arch-Illager while wearing the Royal Guard armor</td>
+                        <td><span class="tier-A">Hard</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Community Section -->
+        <section id="community" class="section">
+            <h2>🌐 Community</h2>
+            
+            <h3>Official Resources</h3>
+            <div class="community-links">
+                <a href="https://www.minecraft.net/en-us/about-dungeons" class="community-link">Official Minecraft Dungeons Site</a>
+                <a href="https://www.reddit.com/r/MinecraftDungeons/" class="community-link">Reddit Community</a>
+                <a href="https://discord.gg/minecraft" class="community-link">Official Minecraft Discord</a>
+            </div>
+            
+            <h3>Popular Content Creators</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>YouTube Channels</h4>
+                    <ul>
+                        <li><strong>OMGcraft:</strong> Comprehensive guides and tutorials</li>
+                        <li><strong>DanTDM:</strong> Entertaining gameplay content</li>
+                        <li><strong>PopularMMOs:</strong> Challenge videos and mods</li>
+                        <li><strong>CaptainSparklez:</strong> Story playthroughs and tips</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Streamers</h4>
+                    <ul>
+                        <li><strong>Check Twitch directory:</strong> Live gameplay and Q&A</li>
+                        <li><strong>Speedrunners:</strong> World record attempts</li>
+                        <li><strong>Challenge runners:</strong> Self-imposed restrictions</li>
+                        <li><strong>Educational streams:</strong> Build guides and strategies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Community Resources</h3>
+            <div class="community-links">
+                <a href="https://minecraft.gamepedia.com/Minecraft_Dungeons" class="community-link">Official Wiki</a>
+                <a href="https://www.speedrun.com/mcd" class="community-link">Speedrun Leaderboards</a>
+                <a href="https://www.planetminecraft.com/resources/servers/?game_version=minecraft-dungeons" class="community-link">Planet Minecraft</a>
+            </div>
+            
+            <h3>Fan Communities</h3>
+            <div class="tip-box">
+                <strong>💡 Join the Community!</strong> Share your builds, ask questions, and connect with other players. The Minecraft Dungeons community is welcoming and always ready to help newcomers!
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Dungeons Bible - Complete Minecraft Dungeons Wiki</p>
+        <p>Minecraft Dungeons is developed by Mojang Studios and Double Eleven</p>
+        <p>This is a fan-made wiki and is not affiliated with Mojang Studios</p>
+    </footer>
+</body>
+</html>
